@@ -3,516 +3,521 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Mission Generator | Divine Insurgent Operations</title>
-    <meta name="description" content="Your daily tactical briefing as a Divine Insurgent. Receive your mission, scripture focus, and operational objectives.">
+    <title>Daily Mission | Tactical Briefing | Seven Cubed Seven Labs</title>
+    <meta name="description" content="Daily tactical briefing for the 144,000. Scripture focus, primary objective, character target. New mission every day at midnight.">
     
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@400;500;600;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
+        :root {
+            --s7-gold: #d4af37;
+            --s7-gold-dark: #b8960c;
+            --s7-navy: #0a0a0a;
+            --s7-navy-light: #151515;
+            --s7-text: #e8e8e8;
+            --s7-text-dim: #888;
+            --s7-red: #cc0000;
+            --s7-red-light: #ff3333;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Rajdhani', sans-serif;
-            background: #0a0a0a;
+            background: var(--s7-navy);
+            color: var(--s7-text);
+            line-height: 1.6;
+            padding-top: 60px;
             min-height: 100vh;
         }
         
-        .font-orbitron { font-family: 'Orbitron', monospace; }
-        .font-mono { font-family: 'Share Tech Mono', monospace; }
-        
-        /* Scan line effect */
-        .scan-lines {
+        /* ══════════════════════════════════════════════════════════════════════
+           UNIVERSAL NAVIGATION
+           ══════════════════════════════════════════════════════════════════════ */
+        .s7-nav {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+            top: 0; left: 0; right: 0;
+            height: 60px;
+            background: rgba(10, 10, 10, 0.97);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(204, 0, 0, 0.3);
+            z-index: 9999;
+        }
+        
+        .s7-nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
             height: 100%;
-            pointer-events: none;
-            background: repeating-linear-gradient(
-                0deg,
-                transparent,
-                transparent 2px,
-                rgba(0, 0, 0, 0.1) 2px,
-                rgba(0, 0, 0, 0.1) 4px
-            );
-            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
         }
         
-        @keyframes flicker {
-            0%, 100% { opacity: 1; }
-            92% { opacity: 1; }
-            93% { opacity: 0.8; }
-            94% { opacity: 1; }
-            97% { opacity: 0.9; }
-            98% { opacity: 1; }
+        .s7-nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
         }
         
-        .flicker { animation: flicker 4s infinite; }
-        
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-        
-        @keyframes blink {
-            0%, 50% { border-color: #d4af37; }
-            51%, 100% { border-color: transparent; }
-        }
-        
-        .typewriter {
-            overflow: hidden;
-            border-right: 3px solid #d4af37;
-            white-space: nowrap;
-            animation: typing 2s steps(30) forwards, blink 0.7s infinite;
-        }
-        
-        @keyframes pulse-red {
-            0%, 100% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(255, 0, 0, 0.6); }
-        }
-        
-        .pulse-red { animation: pulse-red 2s ease-in-out infinite; }
-        
-        @keyframes radar-sweep {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        .radar-sweep {
-            animation: radar-sweep 4s linear infinite;
-        }
-        
-        .tactical-border {
-            border: 1px solid #8b0000;
+        .s7-nav-logo-icon {
+            width: 36px;
+            height: 36px;
             position: relative;
         }
         
-        .tactical-border::before,
-        .tactical-border::after {
+        .s7-nav-logo-icon::before {
             content: '';
             position: absolute;
-            width: 20px;
-            height: 20px;
-            border-color: #d4af37;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--s7-gold);
+            transform: rotate(45deg);
+            opacity: 0.5;
         }
         
-        .tactical-border::before {
-            top: -1px;
-            left: -1px;
-            border-top: 2px solid;
-            border-left: 2px solid;
+        .s7-nav-logo-icon::after {
+            content: '';
+            position: absolute;
+            width: 55%;
+            height: 55%;
+            top: 22.5%;
+            left: 22.5%;
+            border: 2px solid var(--s7-gold);
+            transform: rotate(45deg);
         }
         
-        .tactical-border::after {
-            bottom: -1px;
-            right: -1px;
-            border-bottom: 2px solid;
-            border-right: 2px solid;
+        .s7-nav-logo-text {
+            font-family: 'Orbitron', monospace;
+            font-size: 1rem;
+            color: var(--s7-gold);
+            letter-spacing: 1px;
         }
         
-        .classified-stamp {
-            transform: rotate(-5deg);
-            border: 3px solid #8b0000;
-            padding: 5px 15px;
-            color: #8b0000;
-            font-weight: bold;
-            text-transform: uppercase;
+        .s7-nav-links { display: flex; align-items: center; gap: 5px; }
+        
+        .s7-nav-link {
+            color: var(--s7-text-dim);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 8px 14px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        .s7-nav-link:hover { color: var(--s7-gold); background: rgba(212, 175, 55, 0.1); }
+        .s7-nav-link.active { color: var(--s7-red-light); }
+        
+        .s7-nav-dropdown { position: relative; }
+        
+        .s7-nav-dropdown-btn {
+            color: var(--s7-text-dim);
+            font-size: 0.85rem;
+            padding: 8px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: none;
+            border: none;
+            font-family: 'Raleway', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .s7-nav-dropdown-btn:hover { color: var(--s7-gold); background: rgba(212, 175, 55, 0.1); }
+        .s7-nav-dropdown-btn::after { content: '▼'; font-size: 0.55rem; }
+        
+        .s7-nav-dropdown-menu {
+            position: absolute;
+            top: 100%; right: 0;
+            background: var(--s7-navy-light);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 10px;
+            padding: 8px;
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        
+        .s7-nav-dropdown:hover .s7-nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(5px); }
+        
+        .s7-nav-dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 12px;
+            color: var(--s7-text);
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        .s7-nav-dropdown-item:hover { background: rgba(212, 175, 55, 0.1); color: var(--s7-gold); }
+        
+        .s7-nav-dropdown-icon { font-size: 1.1rem; width: 24px; text-align: center; }
+        .s7-nav-dropdown-text { font-size: 0.85rem; }
+        .s7-nav-dropdown-desc { font-size: 0.7rem; color: var(--s7-text-dim); }
+        
+        .s7-nav-cta {
+            background: linear-gradient(135deg, var(--s7-gold) 0%, var(--s7-gold-dark) 100%);
+            color: #000;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        .s7-nav-cta:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+        
+        .s7-nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 10px; background: none; border: none; }
+        .s7-nav-toggle span { width: 24px; height: 2px; background: var(--s7-gold); }
+        
+        @media (max-width: 900px) {
+            .s7-nav-links {
+                position: fixed; top: 60px; left: 0; right: 0; background: var(--s7-navy);
+                flex-direction: column; padding: 20px; gap: 5px;
+                border-bottom: 1px solid rgba(204, 0, 0, 0.3);
+                transform: translateY(-100%); opacity: 0; visibility: hidden; transition: all 0.3s ease;
+            }
+            .s7-nav-links.active { transform: translateY(0); opacity: 1; visibility: visible; }
+            .s7-nav-toggle { display: flex; }
+            .s7-nav-link, .s7-nav-dropdown-btn { width: 100%; padding: 12px 15px; }
+            .s7-nav-dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; background: rgba(0,0,0,0.2); margin-top: 5px; }
+            .s7-nav-cta { width: 100%; text-align: center; margin-top: 10px; }
+        }
+        
+        /* APP STYLES */
+        #app-root {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+        
+        /* FOOTER */
+        .s7-footer {
+            background: linear-gradient(180deg, var(--s7-navy) 0%, #050505 100%);
+            border-top: 1px solid rgba(204, 0, 0, 0.3);
+            padding: 60px 20px 30px;
+        }
+        
+        .s7-footer-container { max-width: 1200px; margin: 0 auto; }
+        
+        .s7-footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .s7-footer-section h4 {
+            font-family: 'Orbitron', monospace;
+            color: var(--s7-gold);
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        
+        .s7-footer-links { list-style: none; }
+        .s7-footer-links li { margin-bottom: 10px; }
+        
+        .s7-footer-links a {
+            color: var(--s7-text-dim);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        .s7-footer-links a:hover { color: var(--s7-gold); }
+        .s7-footer-links .icon { font-size: 0.9rem; width: 18px; }
+        
+        .s7-footer-bottom {
+            border-top: 1px solid rgba(204, 0, 0, 0.2);
+            padding-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .s7-footer-formula { font-family: 'Orbitron', monospace; font-size: 1.4rem; color: var(--s7-gold); }
+        .s7-footer-tagline { color: var(--s7-text-dim); font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; font-family: 'Raleway', sans-serif; }
+        .s7-footer-copy { color: rgba(255,255,255,0.3); font-size: 0.75rem; font-family: 'Raleway', sans-serif; }
+        .s7-footer-copy a { color: rgba(212, 175, 55, 0.5); text-decoration: none; }
+        
+        @media (max-width: 768px) {
+            .s7-footer-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="scan-lines"></div>
-    <div id="root"></div>
-    
-    <script type="text/babel">
-        const { useState, useEffect } = React;
+
+<!-- NAVIGATION -->
+<nav class="s7-nav">
+    <div class="s7-nav-container">
+        <a href="https://sevencubedseven.com" class="s7-nav-logo">
+            <div class="s7-nav-logo-icon"></div>
+            <span class="s7-nav-logo-text">7³×7 LABS</span>
+        </a>
         
-        // Mission Data
-        const scriptureFocus = [
-            { verse: "Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour.", ref: "1 Peter 5:8" },
-            { verse: "For we wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this world.", ref: "Ephesians 6:12" },
-            { verse: "Submit yourselves therefore to God. Resist the devil, and he will flee from you.", ref: "James 4:7" },
-            { verse: "The thief cometh not, but for to steal, and to kill, and to destroy: I am come that they might have life, and that they might have it more abundantly.", ref: "John 10:10" },
-            { verse: "No weapon that is formed against thee shall prosper; and every tongue that shall rise against thee in judgment thou shalt condemn.", ref: "Isaiah 54:17" },
-            { verse: "Greater is he that is in you, than he that is in the world.", ref: "1 John 4:4" },
-            { verse: "And they overcame him by the blood of the Lamb, and by the word of their testimony; and they loved not their lives unto the death.", ref: "Revelation 12:11" },
-            { verse: "Put on the whole armour of God, that ye may be able to stand against the wiles of the devil.", ref: "Ephesians 6:11" },
-            { verse: "Be strong and of a good courage; be not afraid, neither be thou dismayed: for the LORD thy God is with thee whithersoever thou goest.", ref: "Joshua 1:9" },
-            { verse: "The LORD shall cause thine enemies that rise up against thee to be smitten before thy face.", ref: "Deuteronomy 28:7" },
-            { verse: "If God be for us, who can be against us?", ref: "Romans 8:31" },
-            { verse: "Thanks be to God, which giveth us the victory through our Lord Jesus Christ.", ref: "1 Corinthians 15:57" },
-            { verse: "Ye are of God, little children, and have overcome them: because greater is he that is in you, than he that is in the world.", ref: "1 John 4:4" },
-            { verse: "Watch ye, stand fast in the faith, quit you like men, be strong.", ref: "1 Corinthians 16:13" }
-        ];
+        <button class="s7-nav-toggle" onclick="document.querySelector('.s7-nav-links').classList.toggle('active')">
+            <span></span><span></span><span></span>
+        </button>
         
-        const missionTypes = [
-            { type: "RECONNAISSANCE", color: "#00ccff", icon: "🔍" },
-            { type: "INTERCESSION", color: "#8800ff", icon: "🙏" },
-            { type: "PROCLAMATION", color: "#ffaa00", icon: "📢" },
-            { type: "INFILTRATION", color: "#00ff88", icon: "🎯" },
-            { type: "DEFENSE", color: "#ff4444", icon: "🛡️" },
-            { type: "RESCUE", color: "#ff88aa", icon: "🆘" },
-            { type: "FORTIFICATION", color: "#d4af37", icon: "🏰" }
-        ];
-        
-        const primaryObjectives = [
-            "Identify 3 individuals in your sphere who need prayer covering",
-            "Share one truth from your studies with someone today",
-            "Spend 30 minutes in focused Scripture study",
-            "Fast from one meal and use that time for prayer",
-            "Write down 7 things you're grateful for",
-            "Reach out to someone you've been meaning to encourage",
-            "Identify one area of character weakness and consciously work on it",
-            "Listen more than you speak today - gather intelligence",
-            "Practice 5 minutes of silent communion with God",
-            "Memorize one verse from today's Scripture focus",
-            "Pray for a specific enemy (someone who has wronged you)",
-            "Identify deceptive messages you encountered today",
-            "Share your testimony briefly with one person",
-            "Do one act of service without expecting recognition"
-        ];
-        
-        const secondaryObjectives = [
-            "Review your spiritual armor - which piece needs attention?",
-            "Journal about what God is teaching you this season",
-            "Check in with a fellow believer for mutual encouragement",
-            "Identify one compromise you've been tolerating",
-            "Spend time in nature recognizing God's creation",
-            "Pray through Psalm 91 for protection",
-            "Examine your thought life - take captive any enemy thoughts",
-            "Practice presence - be fully where you are today",
-            "Seek wisdom for a decision you're facing",
-            "Rest in God's sovereignty over your circumstances",
-            "Prepare spiritually for challenges this week",
-            "Review recent dreams for divine communication"
-        ];
-        
-        const characterTargets = [
-            { trait: "PATIENCE", action: "When frustrated today, pause and breathe before responding" },
-            { trait: "HUMILITY", action: "Acknowledge someone else's contribution without seeking credit" },
-            { trait: "COURAGE", action: "Speak truth even when it's uncomfortable" },
-            { trait: "KINDNESS", action: "Go out of your way to help someone in need" },
-            { trait: "SELF-CONTROL", action: "Resist one temptation you typically give in to" },
-            { trait: "FAITHFULNESS", action: "Complete a commitment you've been putting off" },
-            { trait: "GENTLENESS", action: "Respond to criticism with grace" },
-            { trait: "LOVE", action: "Show appreciation to someone you take for granted" },
-            { trait: "JOY", action: "Choose gratitude even in difficult moments" },
-            { trait: "PEACE", action: "Release anxiety about something you can't control" }
-        ];
-        
-        const warningIntel = [
-            "Enemy activity detected in the realm of DISTRACTION - guard your focus",
-            "Intelligence suggests DISCOURAGEMENT attacks incoming - fortify with Scripture",
-            "DIVISION tactics observed - prioritize unity with fellow believers",
-            "DOUBT infiltration attempts expected - anchor in past victories",
-            "DECEPTION operations active - verify all information against Scripture",
-            "DELAY tactics in effect - maintain momentum despite obstacles",
-            "ACCUSATION broadcasts detected - remember your identity in Christ",
-            "FEAR campaigns active in your sector - stand on promises",
-            "COMPROMISE negotiations attempted - hold the line",
-            "ISOLATION tactics deployed - stay connected to the body"
-        ];
-        
-        const closingPhrases = [
-            "The Lamb has already won. You're fighting from victory, not for it.",
-            "Your Commander never loses. Trust His strategy.",
-            "Every breath is warfare. Every prayer is artillery.",
-            "You were born for such a time as this.",
-            "The gates of hell cannot prevail against you.",
-            "Heaven's resources are at your disposal. Use them.",
-            "This is not a drill. This is your moment.",
-            "The 144,000 network is active. You are not alone."
-        ];
-        
-        // Seeded random for consistent daily results
-        const seededRandom = (seed) => {
-            const x = Math.sin(seed++) * 10000;
-            return x - Math.floor(x);
-        };
-        
-        const getDayOfYear = () => {
-            const now = new Date();
-            const start = new Date(now.getFullYear(), 0, 0);
-            const diff = now - start;
-            const oneDay = 1000 * 60 * 60 * 24;
-            return Math.floor(diff / oneDay);
-        };
-        
-        const getRandomItem = (array, seed) => {
-            const index = Math.floor(seededRandom(seed) * array.length);
-            return array[index];
-        };
-        
-        // Generate today's mission
-        const generateMission = () => {
-            const dayOfYear = getDayOfYear();
-            const baseSeed = dayOfYear * 7; // Multiply by 7 for the pattern!
+        <div class="s7-nav-links">
+            <a href="https://144000.ai" class="s7-nav-link">144,000</a>
+            <a href="https://2401.is" class="s7-nav-link">Mathematics</a>
+            <a href="https://divineinsurgent.live" class="s7-nav-link active">Insurgent</a>
             
-            return {
-                date: new Date().toLocaleDateString('en-US', { 
-                    weekday: 'long', 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric' 
-                }),
-                missionCode: `OP-${dayOfYear.toString().padStart(3, '0')}-${new Date().getFullYear()}`,
-                missionType: getRandomItem(missionTypes, baseSeed + 1),
-                scripture: getRandomItem(scriptureFocus, baseSeed + 2),
-                primaryObjective: getRandomItem(primaryObjectives, baseSeed + 3),
-                secondaryObjective: getRandomItem(secondaryObjectives, baseSeed + 4),
-                characterTarget: getRandomItem(characterTargets, baseSeed + 5),
-                warningIntel: getRandomItem(warningIntel, baseSeed + 6),
-                closing: getRandomItem(closingPhrases, baseSeed + 7),
-                thunderLevel: (dayOfYear % 7) + 1
-            };
-        };
-        
-        // Welcome Screen
-        const WelcomeScreen = ({ onStart }) => (
-            <div className="min-h-screen flex flex-col items-center justify-center p-6 text-center bg-gradient-to-b from-black via-gray-900 to-black">
-                <div className="mb-8">
-                    <div className="classified-stamp mb-6 inline-block">
-                        CLASSIFIED // SEVEN THUNDERS CLEARANCE
-                    </div>
+            <div class="s7-nav-dropdown">
+                <button class="s7-nav-dropdown-btn">Tools</button>
+                <div class="s7-nav-dropdown-menu">
+                    <a href="https://144000.ai/assessment.html" class="s7-nav-dropdown-item">
+                        <span class="s7-nav-dropdown-icon">✨</span>
+                        <div><div class="s7-nav-dropdown-text">144,000 Assessment</div><div class="s7-nav-dropdown-desc">Discover your calling</div></div>
+                    </a>
+                    <a href="https://2401.is/calculator.html" class="s7-nav-dropdown-item">
+                        <span class="s7-nav-dropdown-icon">⚡</span>
+                        <div><div class="s7-nav-dropdown-text">C⁷ Calculator</div><div class="s7-nav-dropdown-desc">Your consciousness level</div></div>
+                    </a>
+                    <a href="https://2401.is/probability.html" class="s7-nav-dropdown-item">
+                        <span class="s7-nav-dropdown-icon">📊</span>
+                        <div><div class="s7-nav-dropdown-text">Probability Cascade</div><div class="s7-nav-dropdown-desc">Watch impossibility unfold</div></div>
+                    </a>
+                    <a href="mission.html" class="s7-nav-dropdown-item">
+                        <span class="s7-nav-dropdown-icon">⚔️</span>
+                        <div><div class="s7-nav-dropdown-text">Daily Mission</div><div class="s7-nav-dropdown-desc">Your tactical briefing</div></div>
+                    </a>
+                    <a href="https://sevencubedseven.com/books.html" class="s7-nav-dropdown-item">
+                        <span class="s7-nav-dropdown-icon">📚</span>
+                        <div><div class="s7-nav-dropdown-text">Book Finder</div><div class="s7-nav-dropdown-desc">Personalized recommendations</div></div>
+                    </a>
                 </div>
-                
-                <h1 className="font-orbitron text-4xl md:text-5xl text-red-600 mb-4 flicker">
-                    DIVINE INSURGENT
-                </h1>
-                <h2 className="font-orbitron text-xl text-amber-500 mb-8">
-                    DAILY MISSION GENERATOR
-                </h2>
-                
-                <div className="tactical-border bg-black/50 p-6 max-w-lg mb-8">
-                    <p className="text-gray-300 font-mono text-sm leading-relaxed">
-                        {'>'} OPERATOR STATUS: ACTIVE<br/>
-                        {'>'} CLEARANCE LEVEL: MAXIMUM<br/>
-                        {'>'} MISSION BRIEFING: READY<br/>
-                        {'>'} AUTHORIZATION: BY HIS GRACE ✓
-                    </p>
-                </div>
-                
-                <p className="text-gray-400 max-w-md mb-8">
-                    Receive your daily tactical briefing. New missions generate each day at midnight.
-                </p>
-                
-                <button 
-                    onClick={onStart}
-                    className="bg-red-800 border-2 border-red-600 text-white font-orbitron py-4 px-12 rounded hover:bg-red-700 transition-all pulse-red"
-                >
-                    RECEIVE ORDERS
-                </button>
-                
-                <a 
-                    href="https://divineinsurgent.live" 
-                    target="_blank"
-                    className="text-gray-600 text-sm mt-8 hover:text-red-500 transition-colors"
-                >
-                    Request full Divine Insurgent Manual →
-                </a>
             </div>
-        );
+            
+            <a href="https://www.amazon.com/s?k=julio+c.+medina" target="_blank" class="s7-nav-cta">📚 All Books</a>
+        </div>
+    </div>
+</nav>
+
+<!-- REACT APP -->
+<div id="app-root"></div>
+
+<!-- FOOTER -->
+<footer class="s7-footer">
+    <div class="s7-footer-container">
+        <div class="s7-footer-grid">
+            <div class="s7-footer-section">
+                <h4>PORTALS</h4>
+                <ul class="s7-footer-links">
+                    <li><a href="https://sevencubedseven.com"><span class="icon">🏠</span> Main Hub</a></li>
+                    <li><a href="https://144000.ai"><span class="icon">✨</span> 144,000 Portal</a></li>
+                    <li><a href="https://2401.is"><span class="icon">🔢</span> Mathematics</a></li>
+                    <li><a href="https://divineinsurgent.live"><span class="icon">⚔️</span> Divine Insurgent</a></li>
+                    <li><a href="https://realitynegotiable.is"><span class="icon">🧠</span> Reality Physics</a></li>
+                    <li><a href="https://c343.io"><span class="icon">📜</span> Licensing</a></li>
+                </ul>
+            </div>
+            
+            <div class="s7-footer-section">
+                <h4>TOOLS</h4>
+                <ul class="s7-footer-links">
+                    <li><a href="https://144000.ai/assessment.html"><span class="icon">✨</span> Assessment</a></li>
+                    <li><a href="https://2401.is/calculator.html"><span class="icon">⚡</span> Calculator</a></li>
+                    <li><a href="https://2401.is/probability.html"><span class="icon">📊</span> Probability</a></li>
+                    <li><a href="mission.html"><span class="icon">⚔️</span> Daily Mission</a></li>
+                    <li><a href="https://sevencubedseven.com/books.html"><span class="icon">📚</span> Book Finder</a></li>
+                </ul>
+            </div>
+            
+            <div class="s7-footer-section">
+                <h4>RESOURCES</h4>
+                <ul class="s7-footer-links">
+                    <li><a href="https://www.amazon.com/s?k=julio+c.+medina" target="_blank"><span class="icon">📚</span> All 33+ Books</a></li>
+                    <li><a href="https://twitter.com/7Cubed7" target="_blank"><span class="icon">𝕏</span> @7Cubed7</a></li>
+                    <li><a href="mailto:7cubed7@proton.me"><span class="icon">✉️</span> Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="s7-footer-section">
+                <h4>CONNECT</h4>
+                <ul class="s7-footer-links">
+                    <li><a href="mailto:7cubed7@proton.me">7cubed7@proton.me</a></li>
+                    <li><a href="mailto:ConsciousCodeLabs@proton.me">Business</a></li>
+                    <li><a href="mailto:hello@c343.io">Licensing</a></li>
+                </ul>
+            </div>
+        </div>
         
-        // Mission Briefing Screen
-        const MissionBriefing = ({ mission, onNewMission }) => {
-            const [revealed, setRevealed] = useState(false);
-            
-            useEffect(() => {
-                setTimeout(() => setRevealed(true), 500);
-            }, []);
-            
-            return (
-                <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black p-4 py-8">
-                    <div className="max-w-2xl mx-auto">
-                        {/* Header */}
-                        <div className="text-center mb-6">
-                            <div className="classified-stamp inline-block mb-4">
-                                CLASSIFIED
-                            </div>
-                            <div className="font-mono text-xs text-gray-500">
-                                {mission.date}
-                            </div>
-                        </div>
-                        
-                        {/* Mission Code */}
-                        <div className="tactical-border bg-black/80 p-4 mb-6 text-center">
-                            <div className="font-mono text-xs text-gray-500 mb-1">MISSION DESIGNATION</div>
-                            <div className="font-orbitron text-2xl text-amber-500">
-                                {mission.missionCode}
-                            </div>
-                            <div 
-                                className="font-orbitron text-lg mt-2"
-                                style={{ color: mission.missionType.color }}
-                            >
-                                {mission.missionType.icon} {mission.missionType.type}
-                            </div>
-                        </div>
-                        
-                        {/* Thunder Level */}
-                        <div className="flex justify-center gap-2 mb-6">
-                            {[1,2,3,4,5,6,7].map(i => (
-                                <div 
-                                    key={i}
-                                    className={`w-8 h-8 rounded-full flex items-center justify-center font-orbitron text-sm ${
-                                        i <= mission.thunderLevel 
-                                            ? 'bg-amber-500 text-black' 
-                                            : 'bg-gray-800 text-gray-600'
-                                    }`}
-                                >
-                                    {i}
-                                </div>
-                            ))}
-                        </div>
-                        <div className="text-center text-xs text-gray-500 mb-6">
-                            THUNDER LEVEL {mission.thunderLevel}
-                        </div>
-                        
-                        {revealed && (
-                            <>
-                                {/* Scripture Focus */}
-                                <div className="tactical-border bg-black/60 p-4 mb-4">
-                                    <div className="font-orbitron text-xs text-red-500 mb-2">
-                                        📜 SCRIPTURE FOCUS
-                                    </div>
-                                    <p className="text-gray-300 italic text-sm leading-relaxed">
-                                        "{mission.scripture.verse}"
-                                    </p>
-                                    <p className="text-amber-500 text-sm mt-2 text-right">
-                                        — {mission.scripture.ref}
-                                    </p>
-                                </div>
-                                
-                                {/* Primary Objective */}
-                                <div className="tactical-border bg-red-900/20 p-4 mb-4">
-                                    <div className="font-orbitron text-xs text-red-500 mb-2">
-                                        🎯 PRIMARY OBJECTIVE
-                                    </div>
-                                    <p className="text-white font-semibold">
-                                        {mission.primaryObjective}
-                                    </p>
-                                </div>
-                                
-                                {/* Secondary Objective */}
-                                <div className="tactical-border bg-black/60 p-4 mb-4">
-                                    <div className="font-orbitron text-xs text-amber-500 mb-2">
-                                        📋 SECONDARY OBJECTIVE
-                                    </div>
-                                    <p className="text-gray-300">
-                                        {mission.secondaryObjective}
-                                    </p>
-                                </div>
-                                
-                                {/* Character Target */}
-                                <div className="tactical-border bg-purple-900/20 p-4 mb-4">
-                                    <div className="font-orbitron text-xs text-purple-400 mb-2">
-                                        💎 CHARACTER DEVELOPMENT: {mission.characterTarget.trait}
-                                    </div>
-                                    <p className="text-gray-300">
-                                        {mission.characterTarget.action}
-                                    </p>
-                                </div>
-                                
-                                {/* Warning Intel */}
-                                <div className="tactical-border bg-yellow-900/20 border-yellow-600/50 p-4 mb-4">
-                                    <div className="font-orbitron text-xs text-yellow-500 mb-2">
-                                        ⚠️ ENEMY INTELLIGENCE
-                                    </div>
-                                    <p className="text-yellow-200 text-sm">
-                                        {mission.warningIntel}
-                                    </p>
-                                </div>
-                                
-                                {/* Closing */}
-                                <div className="bg-gradient-to-r from-amber-900/30 to-red-900/30 border border-amber-500/30 rounded p-6 mb-6 text-center">
-                                    <p className="text-amber-200 italic">
-                                        "{mission.closing}"
-                                    </p>
-                                </div>
-                                
-                                {/* Commission Box */}
-                                <div className="tactical-border bg-black p-4 mb-6 font-mono text-xs">
-                                    <div className="grid grid-cols-2 gap-2 text-gray-400">
-                                        <div>OPERATIVE: <span className="text-amber-500">[YOUR NAME]</span></div>
-                                        <div>UNIT: <span className="text-amber-500">144,000 SOG</span></div>
-                                        <div>STATUS: <span className="text-green-500">ACTIVE</span></div>
-                                        <div>COMMANDER: <span className="text-amber-500">CHRIST MICHAEL</span></div>
-                                    </div>
-                                    <div className="mt-3 pt-3 border-t border-gray-800 text-center">
-                                        AUTHORIZATION: <span className="text-green-500">BY HIS GRACE ✓ CONFIRMED</span>
-                                    </div>
-                                </div>
-                                
-                                {/* Resources */}
-                                <div className="bg-black/50 border border-gray-800 rounded p-4 mb-6">
-                                    <div className="font-orbitron text-xs text-gray-500 mb-3">MISSION RESOURCES</div>
-                                    <div className="grid grid-cols-2 gap-2">
-                                        <a href="https://divineinsurgent.live" target="_blank" className="flex items-center gap-2 p-2 bg-gray-900 rounded hover:bg-gray-800 transition-colors text-sm">
-                                            <span>⚔️</span>
-                                            <span className="text-gray-300">Full Manual</span>
-                                        </a>
-                                        <a href="https://144000.ai" target="_blank" className="flex items-center gap-2 p-2 bg-gray-900 rounded hover:bg-gray-800 transition-colors text-sm">
-                                            <span>✨</span>
-                                            <span className="text-gray-300">144,000 Portal</span>
-                                        </a>
-                                        <a href="https://2401.is" target="_blank" className="flex items-center gap-2 p-2 bg-gray-900 rounded hover:bg-gray-800 transition-colors text-sm">
-                                            <span>🔢</span>
-                                            <span className="text-gray-300">Mathematics</span>
-                                        </a>
-                                        <a href="https://sevencubedseven.com" target="_blank" className="flex items-center gap-2 p-2 bg-gray-900 rounded hover:bg-gray-800 transition-colors text-sm">
-                                            <span>🌐</span>
-                                            <span className="text-gray-300">Main Hub</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                
-                                {/* Actions */}
-                                <div className="text-center">
-                                    <p className="text-gray-500 text-xs mb-4">
-                                        New mission generates daily at midnight
-                                    </p>
-                                    <button 
-                                        onClick={() => window.location.reload()}
-                                        className="px-6 py-2 border border-gray-700 text-gray-400 rounded hover:border-amber-500 hover:text-amber-500 transition-colors text-sm"
-                                    >
-                                        REFRESH BRIEFING
-                                    </button>
-                                </div>
-                                
-                                {/* Footer */}
-                                <div className="text-center mt-8 text-gray-600 text-xs">
-                                    <p className="font-orbitron text-amber-700">7³×7 = 2,401</p>
-                                    <p className="mt-1">DIVINE INSURGENT OPERATIONS</p>
-                                    <p className="mt-1">1 John 4:4</p>
-                                </div>
-                            </>
-                        )}
-                    </div>
-                </div>
-            );
-        };
-        
-        // Main App
-        const App = () => {
-            const [screen, setScreen] = useState('welcome');
-            const [mission, setMission] = useState(null);
-            
-            const handleStart = () => {
-                setMission(generateMission());
-                setScreen('briefing');
-            };
-            
-            return (
-                <div className="min-h-screen text-white">
-                    {screen === 'welcome' && <WelcomeScreen onStart={handleStart} />}
-                    {screen === 'briefing' && <MissionBriefing mission={mission} />}
-                </div>
-            );
-        };
-        
-        ReactDOM.render(<App />, document.getElementById('root'));
-    </script>
+        <div class="s7-footer-bottom">
+            <div class="s7-footer-formula">7³ × 7 = 2,401</div>
+            <div class="s7-footer-tagline">Consciousness Architecture</div>
+            <div class="s7-footer-copy">© 2025 <a href="https://sevencubedseven.com">Seven Cubed Seven Labs LLC</a>. All rights reserved.</div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel">
+const { useState, useEffect } = React;
+
+const scriptures = [
+  { ref: "Ephesians 6:12", text: "For we do not wrestle against flesh and blood, but against principalities, against powers..." },
+  { ref: "2 Corinthians 10:4", text: "The weapons of our warfare are not carnal, but mighty through God..." },
+  { ref: "Romans 12:2", text: "Be not conformed to this world: but be transformed by the renewing of your mind..." },
+  { ref: "Revelation 14:12", text: "Here is the patience of the saints: here are they that keep the commandments of God, and the faith of Jesus." },
+  { ref: "Daniel 11:32", text: "The people that do know their God shall be strong, and do exploits." },
+  { ref: "Isaiah 41:10", text: "Fear not, for I am with you; be not dismayed, for I am your God..." },
+  { ref: "Philippians 4:13", text: "I can do all things through Christ which strengtheneth me." }
+];
+
+const objectives = [
+  { type: "RECONNAISSANCE", desc: "Observe and document 3 instances of divine providence today" },
+  { type: "INFILTRATION", desc: "Engage one person in meaningful spiritual conversation" },
+  { type: "FORTIFICATION", desc: "Spend 30 minutes strengthening your prayer life" },
+  { type: "DISRUPTION", desc: "Challenge one lie you've believed about yourself or God" },
+  { type: "EXTRACTION", desc: "Remove one time-wasting activity and replace with purpose" },
+  { type: "COORDINATION", desc: "Encourage one fellow believer in their mission" },
+  { type: "INTELLIGENCE", desc: "Study one chapter of Daniel or Revelation deeply" }
+];
+
+const characters = [
+  { trait: "PATIENCE", focus: "Practice waiting without anxiety in 3 situations today" },
+  { trait: "HUMILITY", focus: "Acknowledge one area where you need God's correction" },
+  { trait: "COURAGE", focus: "Do one thing you've been avoiding due to fear" },
+  { trait: "FAITH", focus: "Trust God with one situation beyond your control" },
+  { trait: "LOVE", focus: "Show unexpected kindness to someone who doesn't deserve it" },
+  { trait: "SELF-CONTROL", focus: "Resist one temptation deliberately and consciously" },
+  { trait: "DISCERNMENT", focus: "Identify one deception in media or culture today" }
+];
+
+function getDailyMission() {
+  const today = new Date();
+  const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
+  
+  const scriptureIndex = dayOfYear % scriptures.length;
+  const objectiveIndex = (dayOfYear + 3) % objectives.length;
+  const characterIndex = (dayOfYear + 5) % characters.length;
+  
+  return {
+    date: today.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }),
+    scripture: scriptures[scriptureIndex],
+    objective: objectives[objectiveIndex],
+    character: characters[characterIndex],
+    missionCode: `DI-${today.getFullYear()}-${String(dayOfYear).padStart(3, '0')}`
+  };
+}
+
+function DailyMission() {
+  const [mission, setMission] = useState(null);
+  const [timeToMidnight, setTimeToMidnight] = useState('');
+
+  useEffect(() => {
+    setMission(getDailyMission());
+    
+    const updateCountdown = () => {
+      const now = new Date();
+      const midnight = new Date();
+      midnight.setHours(24, 0, 0, 0);
+      const diff = midnight - now;
+      
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      
+      setTimeToMidnight(`${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`);
+    };
+    
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  if (!mission) return null;
+
+  const styles = {
+    container: { },
+    header: { textAlign: 'center', marginBottom: '30px' },
+    classified: { display: 'inline-block', background: '#cc0000', color: '#fff', padding: '6px 25px', fontFamily: 'Orbitron, monospace', fontSize: '0.8rem', letterSpacing: '4px', marginBottom: '15px' },
+    title: { fontFamily: 'Orbitron, monospace', fontSize: '1.8rem', color: '#cc0000', letterSpacing: '3px', marginBottom: '10px' },
+    date: { color: '#888', fontSize: '0.9rem' },
+    missionCode: { color: '#cc0000', fontFamily: 'Orbitron, monospace', fontSize: '0.8rem', marginTop: '5px' },
+    countdown: { textAlign: 'center', marginBottom: '30px', padding: '15px', background: 'rgba(204,0,0,0.1)', border: '1px solid rgba(204,0,0,0.3)', borderRadius: '8px' },
+    countdownLabel: { color: '#888', fontSize: '0.75rem', letterSpacing: '2px', marginBottom: '5px' },
+    countdownTime: { fontFamily: 'Orbitron, monospace', fontSize: '1.5rem', color: '#cc0000' },
+    section: { background: 'rgba(204,0,0,0.05)', border: '1px solid rgba(204,0,0,0.2)', borderRadius: '10px', padding: '25px', marginBottom: '20px' },
+    sectionLabel: { fontFamily: 'Orbitron, monospace', color: '#cc0000', fontSize: '0.75rem', letterSpacing: '3px', marginBottom: '15px' },
+    scriptureText: { fontStyle: 'italic', color: '#d4af37', fontSize: '1.1rem', marginBottom: '10px', lineHeight: '1.7' },
+    scriptureRef: { color: '#888', fontSize: '0.85rem' },
+    objectiveType: { fontFamily: 'Orbitron, monospace', color: '#ff3333', fontSize: '1.2rem', marginBottom: '10px' },
+    objectiveDesc: { color: '#e8e8e8', fontSize: '1rem' },
+    characterTrait: { fontFamily: 'Orbitron, monospace', color: '#d4af37', fontSize: '1.2rem', marginBottom: '10px' },
+    characterFocus: { color: '#e8e8e8', fontSize: '1rem' },
+    ctaBox: { background: 'rgba(212,175,55,0.1)', border: '1px solid #d4af37', borderRadius: '10px', padding: '25px', marginTop: '30px', textAlign: 'center' },
+    ctaTitle: { fontFamily: 'Orbitron, monospace', color: '#d4af37', marginBottom: '10px', fontSize: '1rem' },
+    ctaBtn: { display: 'inline-block', background: 'linear-gradient(135deg, #d4af37 0%, #b8960c 100%)', color: '#000', padding: '12px 30px', borderRadius: '25px', textDecoration: 'none', fontWeight: '600', marginTop: '10px' }
+  };
+
+  return (
+    <div style={styles.container}>
+      <div style={styles.header}>
+        <div style={styles.classified}>CLASSIFIED</div>
+        <h1 style={styles.title}>DAILY TACTICAL BRIEFING</h1>
+        <p style={styles.date}>{mission.date}</p>
+        <p style={styles.missionCode}>Mission: {mission.missionCode}</p>
+      </div>
+
+      <div style={styles.countdown}>
+        <div style={styles.countdownLabel}>NEW MISSION IN</div>
+        <div style={styles.countdownTime}>{timeToMidnight}</div>
+      </div>
+
+      <div style={styles.section}>
+        <div style={styles.sectionLabel}>📖 SCRIPTURE FOCUS</div>
+        <p style={styles.scriptureText}>"{mission.scripture.text}"</p>
+        <p style={styles.scriptureRef}>— {mission.scripture.ref}</p>
+      </div>
+
+      <div style={styles.section}>
+        <div style={styles.sectionLabel}>🎯 PRIMARY OBJECTIVE</div>
+        <h3 style={styles.objectiveType}>{mission.objective.type}</h3>
+        <p style={styles.objectiveDesc}>{mission.objective.desc}</p>
+      </div>
+
+      <div style={styles.section}>
+        <div style={styles.sectionLabel}>💎 CHARACTER TARGET</div>
+        <h3 style={styles.characterTrait}>{mission.character.trait}</h3>
+        <p style={styles.characterFocus}>{mission.character.focus}</p>
+      </div>
+
+      <div style={styles.ctaBox}>
+        <h3 style={styles.ctaTitle}>Discover Your Consciousness Level</h3>
+        <p style={{color: '#888', fontSize: '0.9rem'}}>Complete the C⁷ Calculator assessment</p>
+        <a href="https://2401.is/calculator.html" style={styles.ctaBtn}>⚡ Calculate Now</a>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('app-root')).render(<DailyMission />);
+</script>
+
 </body>
 </html>
