@@ -1,64 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Primary Meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Divine Insurgent | Heaven's Special Forces Manual | Seven Cubed Seven Labs</title>
-    <meta name="description" content="You're not a civilian anymore. You're a Divine Insurgent. Get your daily tactical briefing and join heaven's special operations group.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Seven Cubed Seven Labs LLC">
     
+    <!-- SEO Meta -->
+    <title>Divine Insurgent | Heaven's Special Forces | Spiritual Warfare Portal</title>
+    <meta name="description" content="Daily tactical briefings for the 144,000. You are not a civilian. You are behind enemy lines. Get your mission, scripture focus, and character target renewed at midnight.">
+    <meta name="keywords" content="divine insurgent, spiritual warfare, 144000, daily mission, tactical briefing, heaven special forces, end times preparation, spiritual warrior">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://divineinsurgent.live/">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://divineinsurgent.live/">
     <meta property="og:title" content="Divine Insurgent | Heaven's Special Forces">
-    <meta property="og:description" content="Daily tactical briefings for the 144,000 special operations group.">
-    <meta property="og:url" content="https://divineinsurgent.live">
+    <meta property="og:description" content="You are not a civilian. Daily tactical briefings. New mission every midnight.">
+    <meta property="og:image" content="https://divineinsurgent.live/images/og-insurgent.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Divine Insurgent">
+    
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@7Cubed7">
+    <meta name="twitter:creator" content="@7Cubed7">
+    <meta name="twitter:title" content="Divine Insurgent | CLASSIFIED">
+    <meta name="twitter:description" content="Daily tactical briefings for heaven's special forces. New mission at midnight.">
+    <meta name="twitter:image" content="https://divineinsurgent.live/images/og-insurgent.png">
     
+    <!-- Performance: Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@400;500;600;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;500;600&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
     
+    <!-- JSON-LD: Website -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Divine Insurgent",
+      "url": "https://divineinsurgent.live",
+      "description": "Daily tactical briefings and spiritual warfare resources for the 144,000.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Seven Cubed Seven Labs LLC",
+        "url": "https://sevencubedseven.com"
+      }
+    }
+    </script>
+    
+    <!-- Critical CSS -->
     <style>
-        :root {
-            --s7-gold: #d4af37;
-            --s7-gold-dark: #b8960c;
-            --s7-navy: #0a0a0a;
-            --s7-navy-light: #151515;
-            --s7-text: #e8e8e8;
-            --s7-text-dim: #888;
-            --s7-red: #cc0000;
-            --s7-red-light: #ff3333;
-            --s7-red-dark: #990000;
-        }
-        
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --gold: #d4af37;
+            --dark-bg: #0a0a0a;
+            --dark-card: #111111;
+            --dark-border: #222222;
+            --text-primary: #e8e8e8;
+            --text-secondary: #888888;
+            --red: #cc0000;
+            --red-light: #ff3333;
+        }
         
         body {
             font-family: 'Rajdhani', sans-serif;
-            background: var(--s7-navy);
-            color: var(--s7-text);
+            background: var(--dark-bg);
+            color: var(--text-primary);
             line-height: 1.6;
             padding-top: 60px;
         }
         
-        /* ══════════════════════════════════════════════════════════════════════
-           UNIVERSAL NAVIGATION
-           ══════════════════════════════════════════════════════════════════════ */
+        /* ===== UNIVERSAL NAVIGATION ===== */
         .s7-nav {
             position: fixed;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             height: 60px;
             background: rgba(10, 10, 10, 0.97);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(204, 0, 0, 0.3);
             z-index: 9999;
-        }
-        
-        .s7-nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            height: 100%;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 20px;
+            padding: 0 30px;
         }
         
         .s7-nav-logo {
@@ -68,542 +101,600 @@
             text-decoration: none;
         }
         
-        .s7-nav-logo-icon {
+        .s7-nav-cube {
             width: 36px;
             height: 36px;
             position: relative;
         }
         
-        .s7-nav-logo-icon::before {
+        .s7-nav-cube::before,
+        .s7-nav-cube::after {
             content: '';
             position: absolute;
-            width: 100%;
-            height: 100%;
-            border: 2px solid var(--s7-gold);
-            transform: rotate(45deg);
-            opacity: 0.5;
+            border: 2px solid var(--gold);
         }
         
-        .s7-nav-logo-icon::after {
-            content: '';
-            position: absolute;
-            width: 55%;
-            height: 55%;
-            top: 22.5%;
-            left: 22.5%;
-            border: 2px solid var(--s7-gold);
-            transform: rotate(45deg);
+        .s7-nav-cube::before {
+            width: 24px;
+            height: 24px;
+            top: 6px;
+            left: 0;
         }
         
-        .s7-nav-logo-text {
+        .s7-nav-cube::after {
+            width: 24px;
+            height: 24px;
+            top: 0;
+            left: 6px;
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        .s7-nav-brand {
             font-family: 'Orbitron', monospace;
             font-size: 1rem;
-            color: var(--s7-gold);
+            color: var(--gold);
             letter-spacing: 1px;
         }
         
-        .s7-nav-links { display: flex; align-items: center; gap: 5px; }
-        
-        .s7-nav-link {
-            color: var(--s7-text-dim);
-            text-decoration: none;
-            font-size: 0.85rem;
-            padding: 8px 14px;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-            font-family: 'Raleway', sans-serif;
-        }
-        
-        .s7-nav-link:hover { color: var(--s7-gold); background: rgba(212, 175, 55, 0.1); }
-        .s7-nav-link.active { color: var(--s7-red-light); }
-        
-        .s7-nav-dropdown { position: relative; }
-        
-        .s7-nav-dropdown-btn {
-            color: var(--s7-text-dim);
-            font-size: 0.85rem;
-            padding: 8px 14px;
-            border-radius: 6px;
-            cursor: pointer;
+        .s7-nav-links {
             display: flex;
             align-items: center;
-            gap: 6px;
-            background: none;
-            border: none;
-            font-family: 'Raleway', sans-serif;
-            transition: all 0.3s ease;
+            gap: 8px;
         }
         
-        .s7-nav-dropdown-btn:hover { color: var(--s7-gold); background: rgba(212, 175, 55, 0.1); }
-        .s7-nav-dropdown-btn::after { content: '▼'; font-size: 0.55rem; }
+        .s7-nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+            font-weight: 500;
+            font-family: 'Raleway', sans-serif;
+        }
         
-        .s7-nav-dropdown-menu {
+        .s7-nav-link:hover {
+            color: var(--gold);
+        }
+        
+        .s7-nav-link.active {
+            color: var(--red);
+        }
+        
+        .s7-nav-dropdown {
+            position: relative;
+        }
+        
+        .s7-nav-dropdown-content {
             position: absolute;
             top: 100%;
             right: 0;
-            background: var(--s7-navy-light);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 10px;
-            padding: 8px;
+            background: rgba(17, 17, 17, 0.98);
+            border: 1px solid var(--dark-border);
+            border-radius: 8px;
+            padding: 8px 0;
             min-width: 220px;
             opacity: 0;
             visibility: hidden;
             transform: translateY(10px);
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            transition: all 0.3s;
         }
         
-        .s7-nav-dropdown:hover .s7-nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(5px); }
+        .s7-nav-dropdown:hover .s7-nav-dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
         
         .s7-nav-dropdown-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 10px 12px;
-            color: var(--s7-text);
+            display: block;
+            padding: 10px 20px;
+            color: var(--text-secondary);
             text-decoration: none;
-            border-radius: 6px;
-            transition: all 0.2s ease;
+            font-size: 0.85rem;
+            transition: all 0.3s;
             font-family: 'Raleway', sans-serif;
         }
         
-        .s7-nav-dropdown-item:hover { background: rgba(212, 175, 55, 0.1); color: var(--s7-gold); }
-        
-        .s7-nav-dropdown-icon { font-size: 1.1rem; width: 24px; text-align: center; }
-        .s7-nav-dropdown-text { font-size: 0.85rem; }
-        .s7-nav-dropdown-desc { font-size: 0.7rem; color: var(--s7-text-dim); }
+        .s7-nav-dropdown-item:hover {
+            background: rgba(204, 0, 0, 0.1);
+            color: var(--red);
+        }
         
         .s7-nav-cta {
-            background: linear-gradient(135deg, var(--s7-gold) 0%, var(--s7-gold-dark) 100%);
-            color: #000;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            background: linear-gradient(135deg, var(--red), #990000);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 4px;
             text-decoration: none;
-            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: transform 0.3s, box-shadow 0.3s;
             font-family: 'Raleway', sans-serif;
         }
         
-        .s7-nav-cta:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+        .s7-nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(204, 0, 0, 0.4);
+        }
         
-        .s7-nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 10px; background: none; border: none; }
-        .s7-nav-toggle span { width: 24px; height: 2px; background: var(--s7-gold); }
+        .s7-nav-mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        .s7-nav-mobile-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--red);
+            transition: 0.3s;
+        }
         
         @media (max-width: 900px) {
             .s7-nav-links {
-                position: fixed; top: 60px; left: 0; right: 0; background: var(--s7-navy);
-                flex-direction: column; padding: 20px; gap: 5px;
-                border-bottom: 1px solid rgba(204, 0, 0, 0.3);
-                transform: translateY(-100%); opacity: 0; visibility: hidden; transition: all 0.3s ease;
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(10, 10, 10, 0.98);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding-top: 40px;
+                gap: 0;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s;
             }
-            .s7-nav-links.active { transform: translateY(0); opacity: 1; visibility: visible; }
-            .s7-nav-toggle { display: flex; }
-            .s7-nav-link, .s7-nav-dropdown-btn { width: 100%; padding: 12px 15px; }
-            .s7-nav-dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; background: rgba(0,0,0,0.2); margin-top: 5px; }
-            .s7-nav-cta { width: 100%; text-align: center; margin-top: 10px; }
+            
+            .s7-nav-links.active {
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .s7-nav-link {
+                padding: 15px 30px;
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid var(--dark-border);
+            }
+            
+            .s7-nav-dropdown-content {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                background: rgba(10, 10, 10, 0.5);
+                border: none;
+                border-radius: 0;
+            }
+            
+            .s7-nav-cta {
+                margin-top: 20px;
+            }
+            
+            .s7-nav-mobile-toggle {
+                display: flex;
+            }
         }
         
-        /* ══════════════════════════════════════════════════════════════════════
-           PAGE STYLES
-           ══════════════════════════════════════════════════════════════════════ */
-        
-        @keyframes scan { 0%, 100% { opacity: 0; } 50% { opacity: 0.1; } }
-        @keyframes pulse-red { 0%, 100% { box-shadow: 0 0 30px rgba(204, 0, 0, 0.3); } 50% { box-shadow: 0 0 60px rgba(204, 0, 0, 0.6); } }
-        @keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
-        
-        .scan-lines {
+        /* ===== SCAN LINES ===== */
+        body::before {
+            content: '';
             position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background: repeating-linear-gradient(
                 0deg,
                 transparent,
                 transparent 2px,
-                rgba(0,0,0,0.1) 2px,
-                rgba(0,0,0,0.1) 4px
+                rgba(0, 0, 0, 0.1) 2px,
+                rgba(0, 0, 0, 0.1) 4px
             );
             pointer-events: none;
-            z-index: 1;
-            animation: scan 4s infinite;
+            z-index: 9998;
         }
         
+        /* ===== HERO SECTION ===== */
         .hero {
-            min-height: 70vh;
+            min-height: calc(100vh - 60px);
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             text-align: center;
             padding: 60px 20px;
             position: relative;
-            background: radial-gradient(ellipse at center, rgba(204, 0, 0, 0.08) 0%, transparent 60%);
         }
         
         .classified-stamp {
-            background: var(--s7-red);
-            color: #fff;
-            padding: 8px 30px;
+            position: absolute;
+            top: 100px;
+            right: 50px;
             font-family: 'Orbitron', monospace;
-            font-size: 0.8rem;
-            letter-spacing: 5px;
-            transform: rotate(-3deg);
-            margin-bottom: 30px;
-            border: 2px solid var(--s7-red-light);
+            font-size: 1.5rem;
+            color: var(--red);
+            border: 3px solid var(--red);
+            padding: 10px 25px;
+            transform: rotate(15deg);
+            opacity: 0.7;
         }
         
         .hero-title {
             font-family: 'Orbitron', monospace;
-            font-size: 3.5rem;
-            color: #fff;
-            margin-bottom: 10px;
-            letter-spacing: 5px;
+            font-size: 4rem;
+            color: var(--red);
             text-shadow: 0 0 40px rgba(204, 0, 0, 0.5);
+            margin-bottom: 20px;
+            letter-spacing: 5px;
         }
         
         .hero-subtitle {
+            font-family: 'Orbitron', monospace;
             font-size: 1.2rem;
-            color: var(--s7-red-light);
-            letter-spacing: 8px;
+            color: var(--gold);
             margin-bottom: 40px;
-            text-transform: uppercase;
-        }
-        
-        .mission-cta {
-            background: linear-gradient(135deg, rgba(204, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%);
-            border: 2px solid var(--s7-red);
-            border-radius: 10px;
-            padding: 35px 50px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            animation: pulse-red 3s ease-in-out infinite;
-        }
-        
-        .mission-cta::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%; width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
-            animation: shimmer 3s infinite;
-        }
-        
-        .mission-badge {
-            display: inline-block;
-            background: var(--s7-red);
-            color: #fff;
-            padding: 6px 20px;
-            font-family: 'Orbitron', monospace;
-            font-size: 0.7rem;
             letter-spacing: 3px;
-            margin-bottom: 15px;
-            position: relative;
         }
         
-        .mission-title {
-            font-family: 'Orbitron', monospace;
-            font-size: 1.6rem;
-            color: #fff;
-            margin-bottom: 10px;
-            position: relative;
+        .hero-message {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 50px;
+            line-height: 1.8;
         }
         
-        .mission-desc {
-            color: rgba(255,255,255,0.7);
-            font-size: 1rem;
-            margin-bottom: 20px;
-            position: relative;
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         
-        .mission-button {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--s7-red) 0%, var(--s7-red-dark) 100%);
-            color: #fff;
-            padding: 15px 50px;
-            font-family: 'Orbitron', monospace;
-            font-size: 1rem;
-            font-weight: 700;
+        .btn {
+            padding: 15px 40px;
+            border-radius: 0;
             text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+            font-family: 'Orbitron', monospace;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            transition: all 0.3s ease;
-            position: relative;
+            letter-spacing: 2px;
         }
         
-        .mission-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 50px rgba(204, 0, 0, 0.7);
+        .btn-primary {
+            background: var(--red);
+            color: #fff;
+            border: 2px solid var(--red);
         }
         
-        .mission-meta {
-            color: rgba(255,255,255,0.4);
-            font-size: 0.8rem;
-            margin-top: 15px;
-            position: relative;
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--red);
         }
         
-        .section {
-            padding: 60px 20px;
-            max-width: 1000px;
+        .btn-secondary {
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            background: transparent;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--gold);
+            color: #000;
+        }
+        
+        /* ===== SECTIONS ===== */
+        section {
+            padding: 100px 20px;
+            max-width: 1200px;
             margin: 0 auto;
-            position: relative;
         }
         
         .section-title {
             font-family: 'Orbitron', monospace;
-            text-align: center;
             font-size: 1.5rem;
-            color: var(--s7-red-light);
-            margin-bottom: 40px;
-            letter-spacing: 5px;
+            text-align: center;
+            margin-bottom: 15px;
+            color: var(--red);
+            letter-spacing: 3px;
         }
         
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 60px;
+            font-size: 1rem;
+        }
+        
+        /* ===== IDENTITY CARDS ===== */
         .identity-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
         
         .identity-card {
-            background: rgba(204, 0, 0, 0.05);
-            border: 1px solid rgba(204, 0, 0, 0.3);
-            border-radius: 5px;
-            padding: 25px;
+            background: var(--dark-card);
+            border: 1px solid var(--dark-border);
+            border-left: 4px solid var(--red);
+            padding: 30px;
         }
         
-        .identity-icon { font-size: 2rem; margin-bottom: 15px; }
-        .identity-title { color: var(--s7-red-light); font-family: 'Orbitron', monospace; font-size: 0.9rem; margin-bottom: 10px; letter-spacing: 2px; }
-        .identity-desc { color: var(--s7-text-dim); font-size: 0.95rem; }
-        
-        .scripture-box {
-            background: rgba(212, 175, 55, 0.05);
-            border-left: 3px solid var(--s7-gold);
-            padding: 25px;
-            margin-top: 40px;
+        .identity-label {
+            font-family: 'Orbitron', monospace;
+            font-size: 0.75rem;
+            color: var(--red);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
         }
         
-        .scripture-text { color: var(--s7-gold); font-style: italic; font-size: 1rem; margin-bottom: 10px; }
-        .scripture-ref { color: var(--s7-text-dim); font-size: 0.85rem; }
+        .identity-value {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
         
-        /* ══════════════════════════════════════════════════════════════════════
-           UNIVERSAL FOOTER
-           ══════════════════════════════════════════════════════════════════════ */
+        .identity-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* ===== MISSION PREVIEW ===== */
+        .mission-preview {
+            background: var(--dark-card);
+            border: 2px solid var(--red);
+            padding: 50px;
+            text-align: center;
+        }
+        
+        .mission-label {
+            font-family: 'Orbitron', monospace;
+            font-size: 0.85rem;
+            color: var(--red);
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+        
+        .mission-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 2rem;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+        
+        .mission-desc {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        /* ===== FOOTER ===== */
         .s7-footer {
-            background: linear-gradient(180deg, var(--s7-navy) 0%, #050505 100%);
+            background: linear-gradient(180deg, #0a0a0a 0%, #050505 100%);
             border-top: 1px solid rgba(204, 0, 0, 0.3);
             padding: 60px 20px 30px;
-            position: relative;
         }
-        
-        .s7-footer-container { max-width: 1200px; margin: 0 auto; }
         
         .s7-footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 40px;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
         
-        .s7-footer-section h4 {
+        .s7-footer-col h4 {
             font-family: 'Orbitron', monospace;
-            color: var(--s7-gold);
-            font-size: 0.85rem;
+            color: var(--gold);
+            font-size: 0.8rem;
             margin-bottom: 20px;
             letter-spacing: 2px;
         }
         
-        .s7-footer-links { list-style: none; }
-        .s7-footer-links li { margin-bottom: 10px; }
-        
-        .s7-footer-links a {
-            color: var(--s7-text-dim);
+        .s7-footer-col a {
+            display: block;
+            color: var(--text-secondary);
             text-decoration: none;
             font-size: 0.85rem;
-            transition: color 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            padding: 6px 0;
+            transition: color 0.3s;
             font-family: 'Raleway', sans-serif;
         }
         
-        .s7-footer-links a:hover { color: var(--s7-gold); }
-        .s7-footer-links .icon { font-size: 0.9rem; width: 18px; }
-        
-        .s7-footer-bottom {
-            border-top: 1px solid rgba(204, 0, 0, 0.2);
-            padding-top: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
+        .s7-footer-col a:hover {
+            color: var(--gold);
         }
         
-        .s7-footer-formula { font-family: 'Orbitron', monospace; font-size: 1.4rem; color: var(--s7-gold); text-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
-        .s7-footer-tagline { color: var(--s7-text-dim); font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; font-family: 'Raleway', sans-serif; }
-        .s7-footer-copy { color: rgba(255,255,255,0.3); font-size: 0.75rem; font-family: 'Raleway', sans-serif; }
-        .s7-footer-copy a { color: rgba(212, 175, 55, 0.5); text-decoration: none; }
+        .s7-footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--dark-border);
+        }
+        
+        .s7-footer-formula {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.4rem;
+            color: var(--gold);
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+            margin-bottom: 10px;
+        }
+        
+        .s7-footer-tagline {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+        
+        .s7-footer-copy {
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+        }
         
         @media (max-width: 768px) {
-            .hero-title { font-size: 2rem; }
-            .s7-footer-grid { grid-template-columns: 1fr 1fr; }
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .classified-stamp {
+                top: 80px;
+                right: 20px;
+                font-size: 1rem;
+            }
+            
+            .s7-footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .mission-preview {
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
 <body>
-
-<div class="scan-lines"></div>
-
-<!-- NAVIGATION -->
-<nav class="s7-nav">
-    <div class="s7-nav-container">
+    <!-- Navigation -->
+    <nav class="s7-nav">
         <a href="https://sevencubedseven.com" class="s7-nav-logo">
-            <div class="s7-nav-logo-icon"></div>
-            <span class="s7-nav-logo-text">7³×7 LABS</span>
+            <div class="s7-nav-cube"></div>
+            <span class="s7-nav-brand">7³×7 LABS</span>
         </a>
         
-        <button class="s7-nav-toggle" onclick="document.querySelector('.s7-nav-links').classList.toggle('active')">
-            <span></span><span></span><span></span>
-        </button>
-        
-        <div class="s7-nav-links">
+        <div class="s7-nav-links" id="navLinks">
             <a href="https://144000.ai" class="s7-nav-link">144,000</a>
             <a href="https://2401.is" class="s7-nav-link">Mathematics</a>
             <a href="https://divineinsurgent.live" class="s7-nav-link active">Insurgent</a>
             
             <div class="s7-nav-dropdown">
-                <button class="s7-nav-dropdown-btn">Tools</button>
-                <div class="s7-nav-dropdown-menu">
-                    <a href="https://144000.ai/assessment.html" class="s7-nav-dropdown-item">
-                        <span class="s7-nav-dropdown-icon">✨</span>
-                        <div><div class="s7-nav-dropdown-text">144,000 Assessment</div><div class="s7-nav-dropdown-desc">Discover your calling</div></div>
-                    </a>
-                    <a href="https://2401.is/calculator.html" class="s7-nav-dropdown-item">
-                        <span class="s7-nav-dropdown-icon">⚡</span>
-                        <div><div class="s7-nav-dropdown-text">C⁷ Calculator</div><div class="s7-nav-dropdown-desc">Your consciousness level</div></div>
-                    </a>
-                    <a href="https://2401.is/probability.html" class="s7-nav-dropdown-item">
-                        <span class="s7-nav-dropdown-icon">📊</span>
-                        <div><div class="s7-nav-dropdown-text">Probability Cascade</div><div class="s7-nav-dropdown-desc">Watch impossibility unfold</div></div>
-                    </a>
-                    <a href="mission.html" class="s7-nav-dropdown-item">
-                        <span class="s7-nav-dropdown-icon">⚔️</span>
-                        <div><div class="s7-nav-dropdown-text">Daily Mission</div><div class="s7-nav-dropdown-desc">Your tactical briefing</div></div>
-                    </a>
-                    <a href="https://sevencubedseven.com/books.html" class="s7-nav-dropdown-item">
-                        <span class="s7-nav-dropdown-icon">📚</span>
-                        <div><div class="s7-nav-dropdown-text">Book Finder</div><div class="s7-nav-dropdown-desc">Personalized recommendations</div></div>
-                    </a>
+                <span class="s7-nav-link" style="cursor: pointer;">Tools ▾</span>
+                <div class="s7-nav-dropdown-content">
+                    <a href="https://144000.ai/assessment.html" class="s7-nav-dropdown-item">✨ 144,000 Assessment</a>
+                    <a href="https://2401.is/calculator.html" class="s7-nav-dropdown-item">⚡ C⁷ Calculator</a>
+                    <a href="https://2401.is/probability.html" class="s7-nav-dropdown-item">📊 Probability Cascade</a>
+                    <a href="https://divineinsurgent.live/mission.html" class="s7-nav-dropdown-item">⚔️ Daily Mission</a>
+                    <a href="https://sevencubedseven.com/books.html" class="s7-nav-dropdown-item">📚 Book Finder</a>
                 </div>
             </div>
             
-            <a href="https://www.amazon.com/s?k=julio+c.+medina" target="_blank" class="s7-nav-cta">📚 All Books</a>
-        </div>
-    </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-    <div class="classified-stamp">CLASSIFIED</div>
-    <h1 class="hero-title">DIVINE INSURGENT</h1>
-    <p class="hero-subtitle">Heaven's Special Forces</p>
-    
-    <div class="mission-cta">
-        <div class="mission-badge">⚔️ DAILY TACTICAL BRIEFING</div>
-        <h2 class="mission-title">DAILY MISSION GENERATOR</h2>
-        <p class="mission-desc">New tactical objectives every day at midnight</p>
-        <a href="mission.html" class="mission-button">Get Today's Mission</a>
-        <p class="mission-meta">Scripture focus • Primary objective • Character target</p>
-    </div>
-</section>
-
-<!-- IDENTITY -->
-<section class="section">
-    <h2 class="section-title">YOUR TRUE IDENTITY</h2>
-    
-    <div class="identity-grid">
-        <div class="identity-card">
-            <div class="identity-icon">⚔️</div>
-            <h3 class="identity-title">NOT A CIVILIAN</h3>
-            <p class="identity-desc">You've been drafted into a cosmic conflict. The enemy knows your name. Time to know his playbook.</p>
+            <a href="https://www.amazon.com/s?k=julio+c.+medina" class="s7-nav-cta" target="_blank">📚 All Books</a>
         </div>
         
-        <div class="identity-card">
-            <div class="identity-icon">🎯</div>
-            <h3 class="identity-title">SPECIAL OPERATIONS</h3>
-            <p class="identity-desc">The 144,000 aren't regular troops. You're Special Operations Group - different rules, different mission.</p>
+        <div class="s7-nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-        
-        <div class="identity-card">
-            <div class="identity-icon">🔥</div>
-            <h3 class="identity-title">BEHIND ENEMY LINES</h3>
-            <p class="identity-desc">You're operating in occupied territory. Every day is a mission. Every interaction is strategic.</p>
-        </div>
-        
-        <div class="identity-card">
-            <div class="identity-icon">👑</div>
-            <h3 class="identity-title">ROYAL COMMISSION</h3>
-            <p class="identity-desc">Your Commander is Christ Michael. Your authorization comes from the throne room itself.</p>
-        </div>
-    </div>
+    </nav>
     
-    <div class="scripture-box">
-        <p class="scripture-text">"For we do not wrestle against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this age."</p>
-        <p class="scripture-ref">— Ephesians 6:12</p>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="s7-footer">
-    <div class="s7-footer-container">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="classified-stamp">CLASSIFIED</div>
+        <h1 class="hero-title">DIVINE INSURGENT</h1>
+        <div class="hero-subtitle">HEAVEN'S SPECIAL FORCES</div>
+        <p class="hero-message">You are not a civilian. You are an operative behind enemy lines. The kingdom of darkness surrounds you, but the One who is in you is greater than the one who is in the world.</p>
+        
+        <div class="hero-cta">
+            <a href="https://divineinsurgent.live/mission.html" class="btn btn-primary">Get Today's Mission</a>
+            <a href="https://144000.ai/assessment.html" class="btn btn-secondary">Verify Calling</a>
+        </div>
+    </section>
+    
+    <!-- Identity Section -->
+    <section>
+        <h2 class="section-title">YOUR IDENTITY</h2>
+        <p class="section-subtitle">You are not who they say you are. You are who HE says you are.</p>
+        
+        <div class="identity-grid">
+            <div class="identity-card">
+                <div class="identity-label">DESIGNATION</div>
+                <div class="identity-value">Divine Insurgent</div>
+                <div class="identity-desc">An operative of heaven's kingdom, embedded in enemy territory, awaiting activation for final operations.</div>
+            </div>
+            
+            <div class="identity-card">
+                <div class="identity-label">MISSION STATUS</div>
+                <div class="identity-value">Active Deployment</div>
+                <div class="identity-desc">Daily briefings issued. Tactical objectives assigned. Character development in progress.</div>
+            </div>
+            
+            <div class="identity-card">
+                <div class="identity-label">NETWORK</div>
+                <div class="identity-value">144,000 Operatives</div>
+                <div class="identity-desc">Part of a sealed network of consciousness warriors. Your 60 unique aspects are essential to the mission.</div>
+            </div>
+            
+            <div class="identity-card">
+                <div class="identity-label">COMMANDING OFFICER</div>
+                <div class="identity-value">Michael</div>
+                <div class="identity-desc">The Prince who stands for your people. When He stands up, your protection is absolute.</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Mission Preview -->
+    <section>
+        <div class="mission-preview">
+            <div class="mission-label">DAILY TACTICAL BRIEFING</div>
+            <h2 class="mission-title">New Mission Every Midnight</h2>
+            <p class="mission-desc">Scripture focus. Primary objective. Character target. Your tactical briefing regenerates at midnight with fresh orders for the day.</p>
+            <a href="https://divineinsurgent.live/mission.html" class="btn btn-primary">Access Briefing</a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="s7-footer">
         <div class="s7-footer-grid">
-            <div class="s7-footer-section">
+            <div class="s7-footer-col">
                 <h4>PORTALS</h4>
-                <ul class="s7-footer-links">
-                    <li><a href="https://sevencubedseven.com"><span class="icon">🏠</span> Main Hub</a></li>
-                    <li><a href="https://144000.ai"><span class="icon">✨</span> 144,000 Portal</a></li>
-                    <li><a href="https://2401.is"><span class="icon">🔢</span> Mathematics</a></li>
-                    <li><a href="https://divineinsurgent.live"><span class="icon">⚔️</span> Divine Insurgent</a></li>
-                    <li><a href="https://realitynegotiable.is"><span class="icon">🧠</span> Reality Physics</a></li>
-                    <li><a href="https://c343.io"><span class="icon">📜</span> Licensing</a></li>
-                </ul>
+                <a href="https://sevencubedseven.com">🏠 Main Hub</a>
+                <a href="https://144000.ai">✨ 144,000 Portal</a>
+                <a href="https://2401.is">📐 Mathematics</a>
+                <a href="https://divineinsurgent.live">⚔️ Divine Insurgent</a>
+                <a href="https://realitynegotiable.is">🌀 Reality Negotiable</a>
+                <a href="https://c343.io">🏢 Enterprise</a>
             </div>
             
-            <div class="s7-footer-section">
+            <div class="s7-footer-col">
                 <h4>TOOLS</h4>
-                <ul class="s7-footer-links">
-                    <li><a href="https://144000.ai/assessment.html"><span class="icon">✨</span> Assessment</a></li>
-                    <li><a href="https://2401.is/calculator.html"><span class="icon">⚡</span> Calculator</a></li>
-                    <li><a href="https://2401.is/probability.html"><span class="icon">📊</span> Probability</a></li>
-                    <li><a href="mission.html"><span class="icon">⚔️</span> Daily Mission</a></li>
-                    <li><a href="https://sevencubedseven.com/books.html"><span class="icon">📚</span> Book Finder</a></li>
-                </ul>
+                <a href="https://144000.ai/assessment.html">✨ 144,000 Assessment</a>
+                <a href="https://2401.is/calculator.html">⚡ C⁷ Calculator</a>
+                <a href="https://2401.is/probability.html">📊 Probability Cascade</a>
+                <a href="https://divineinsurgent.live/mission.html">⚔️ Daily Mission</a>
+                <a href="https://sevencubedseven.com/books.html">📚 Book Finder</a>
             </div>
             
-            <div class="s7-footer-section">
+            <div class="s7-footer-col">
                 <h4>RESOURCES</h4>
-                <ul class="s7-footer-links">
-                    <li><a href="https://www.amazon.com/s?k=julio+c.+medina" target="_blank"><span class="icon">📚</span> All 33+ Books</a></li>
-                    <li><a href="https://twitter.com/7Cubed7" target="_blank"><span class="icon">𝕏</span> @7Cubed7</a></li>
-                    <li><a href="mailto:7cubed7@proton.me"><span class="icon">✉️</span> Contact</a></li>
-                </ul>
+                <a href="https://www.amazon.com/s?k=julio+c.+medina" target="_blank">📖 All Books on Amazon</a>
+                <a href="https://twitter.com/7Cubed7" target="_blank">𝕏 @7Cubed7</a>
+                <a href="mailto:7cubed7@proton.me">✉️ Contact</a>
             </div>
             
-            <div class="s7-footer-section">
+            <div class="s7-footer-col">
                 <h4>CONNECT</h4>
-                <ul class="s7-footer-links">
-                    <li><a href="mailto:7cubed7@proton.me">7cubed7@proton.me</a></li>
-                    <li><a href="mailto:ConsciousCodeLabs@proton.me">Business</a></li>
-                    <li><a href="mailto:hello@c343.io">Licensing</a></li>
-                </ul>
+                <a href="mailto:7cubed7@proton.me">7cubed7@proton.me</a>
+                <a href="mailto:ConsciousCodeLabs@proton.me">ConsciousCodeLabs@proton.me</a>
+                <a href="mailto:hello@c343.io">hello@c343.io</a>
             </div>
         </div>
         
         <div class="s7-footer-bottom">
             <div class="s7-footer-formula">7³ × 7 = 2,401</div>
-            <div class="s7-footer-tagline">Consciousness Architecture</div>
-            <div class="s7-footer-copy">© 2025 <a href="https://sevencubedseven.com">Seven Cubed Seven Labs LLC</a>. All rights reserved.</div>
+            <div class="s7-footer-tagline">CONSCIOUSNESS ARCHITECTURE</div>
+            <div class="s7-footer-copy">© 2025 Seven Cubed Seven Labs LLC. All rights reserved.</div>
         </div>
-    </div>
-</footer>
-
+    </footer>
 </body>
 </html>
