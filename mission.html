@@ -1,58 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Primary Meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Mission | Tactical Briefing | Seven Cubed Seven Labs</title>
-    <meta name="description" content="Daily tactical briefing for the 144,000. Scripture focus, primary objective, character target. New mission every day at midnight.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Seven Cubed Seven Labs LLC">
     
+    <!-- SEO Meta -->
+    <title>Daily Mission | Divine Insurgent Tactical Briefing | Renewed at Midnight</title>
+    <meta name="description" content="Your daily tactical briefing for spiritual warfare. Fresh mission, scripture, and character target renewed at midnight. Heaven's Special Forces daily orders.">
+    <meta name="keywords" content="daily mission, spiritual warfare, divine insurgent, daily devotional, tactical briefing, 144000 mission, spiritual orders">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://divineinsurgent.live/mission.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://divineinsurgent.live/mission.html">
+    <meta property="og:title" content="Daily Mission | Your Orders from Heaven">
+    <meta property="og:description" content="Fresh tactical briefing renewed at midnight. Mission. Scripture. Character target.">
+    <meta property="og:image" content="https://divineinsurgent.live/images/og-mission.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Divine Insurgent">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@7Cubed7">
+    <meta name="twitter:creator" content="@7Cubed7">
+    <meta name="twitter:title" content="Daily Mission | Divine Insurgent">
+    <meta name="twitter:description" content="Your tactical briefing renewed at midnight. Heaven's Special Forces daily orders.">
+    <meta name="twitter:image" content="https://divineinsurgent.live/images/og-mission.png">
+    
+    <!-- Performance: Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@400;500;600;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- JSON-LD: WebApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Divine Insurgent Daily Mission",
+      "url": "https://divineinsurgent.live/mission.html",
+      "description": "Daily tactical briefing for spiritual warfare with fresh mission, scripture, and character target renewed at midnight.",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Seven Cubed Seven Labs LLC",
+        "url": "https://sevencubedseven.com"
+      }
+    }
+    </script>
+    
+    <!-- Critical CSS -->
     <style>
-        :root {
-            --s7-gold: #d4af37;
-            --s7-gold-dark: #b8960c;
-            --s7-navy: #0a0a0a;
-            --s7-navy-light: #151515;
-            --s7-text: #e8e8e8;
-            --s7-text-dim: #888;
-            --s7-red: #cc0000;
-            --s7-red-light: #ff3333;
-        }
-        
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --gold: #d4af37;
+            --dark-bg: #0a0a0a;
+            --dark-card: #111111;
+            --dark-border: #222222;
+            --text-primary: #e8e8e8;
+            --text-secondary: #888888;
+            --red: #cc0000;
+            --red-dark: #990000;
+            --tactical-gray: #1a1a1a;
+        }
         
         body {
             font-family: 'Rajdhani', sans-serif;
-            background: var(--s7-navy);
-            color: var(--s7-text);
+            background: var(--dark-bg);
+            color: var(--text-primary);
             line-height: 1.6;
             padding-top: 60px;
-            min-height: 100vh;
+            position: relative;
         }
         
-        /* ══════════════════════════════════════════════════════════════════════
-           UNIVERSAL NAVIGATION
-           ══════════════════════════════════════════════════════════════════════ */
+        /* Scan lines overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0, 0, 0, 0.1) 2px,
+                rgba(0, 0, 0, 0.1) 4px
+            );
+            pointer-events: none;
+            z-index: 9998;
+        }
+        
+        /* ===== UNIVERSAL NAVIGATION ===== */
         .s7-nav {
             position: fixed;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             height: 60px;
             background: rgba(10, 10, 10, 0.97);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(204, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(204, 0, 0, 0.5);
             z-index: 9999;
-        }
-        
-        .s7-nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            height: 100%;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 20px;
+            padding: 0 30px;
         }
         
         .s7-nav-logo {
@@ -62,462 +129,731 @@
             text-decoration: none;
         }
         
-        .s7-nav-logo-icon {
+        .s7-nav-cube {
             width: 36px;
             height: 36px;
             position: relative;
         }
         
-        .s7-nav-logo-icon::before {
+        .s7-nav-cube::before,
+        .s7-nav-cube::after {
             content: '';
             position: absolute;
-            width: 100%;
-            height: 100%;
-            border: 2px solid var(--s7-gold);
-            transform: rotate(45deg);
-            opacity: 0.5;
+            border: 2px solid var(--gold);
         }
         
-        .s7-nav-logo-icon::after {
-            content: '';
-            position: absolute;
-            width: 55%;
-            height: 55%;
-            top: 22.5%;
-            left: 22.5%;
-            border: 2px solid var(--s7-gold);
-            transform: rotate(45deg);
+        .s7-nav-cube::before {
+            width: 24px;
+            height: 24px;
+            top: 6px;
+            left: 0;
         }
         
-        .s7-nav-logo-text {
+        .s7-nav-cube::after {
+            width: 24px;
+            height: 24px;
+            top: 0;
+            left: 6px;
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        .s7-nav-brand {
             font-family: 'Orbitron', monospace;
             font-size: 1rem;
-            color: var(--s7-gold);
+            color: var(--gold);
             letter-spacing: 1px;
         }
         
-        .s7-nav-links { display: flex; align-items: center; gap: 5px; }
-        
-        .s7-nav-link {
-            color: var(--s7-text-dim);
-            text-decoration: none;
-            font-size: 0.85rem;
-            padding: 8px 14px;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-            font-family: 'Raleway', sans-serif;
-        }
-        
-        .s7-nav-link:hover { color: var(--s7-gold); background: rgba(212, 175, 55, 0.1); }
-        .s7-nav-link.active { color: var(--s7-red-light); }
-        
-        .s7-nav-dropdown { position: relative; }
-        
-        .s7-nav-dropdown-btn {
-            color: var(--s7-text-dim);
-            font-size: 0.85rem;
-            padding: 8px 14px;
-            border-radius: 6px;
-            cursor: pointer;
+        .s7-nav-links {
             display: flex;
             align-items: center;
-            gap: 6px;
-            background: none;
-            border: none;
-            font-family: 'Raleway', sans-serif;
-            transition: all 0.3s ease;
+            gap: 8px;
         }
         
-        .s7-nav-dropdown-btn:hover { color: var(--s7-gold); background: rgba(212, 175, 55, 0.1); }
-        .s7-nav-dropdown-btn::after { content: '▼'; font-size: 0.55rem; }
+        .s7-nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
         
-        .s7-nav-dropdown-menu {
+        .s7-nav-link:hover {
+            color: var(--gold);
+        }
+        
+        .s7-nav-link.active {
+            color: var(--red);
+        }
+        
+        .s7-nav-dropdown {
+            position: relative;
+        }
+        
+        .s7-nav-dropdown-content {
             position: absolute;
-            top: 100%; right: 0;
-            background: var(--s7-navy-light);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 10px;
-            padding: 8px;
+            top: 100%;
+            right: 0;
+            background: rgba(17, 17, 17, 0.98);
+            border: 1px solid var(--dark-border);
+            border-radius: 8px;
+            padding: 8px 0;
             min-width: 220px;
             opacity: 0;
             visibility: hidden;
             transform: translateY(10px);
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            transition: all 0.3s;
         }
         
-        .s7-nav-dropdown:hover .s7-nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(5px); }
+        .s7-nav-dropdown:hover .s7-nav-dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
         
         .s7-nav-dropdown-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 10px 12px;
-            color: var(--s7-text);
+            display: block;
+            padding: 10px 20px;
+            color: var(--text-secondary);
             text-decoration: none;
-            border-radius: 6px;
-            transition: all 0.2s ease;
-            font-family: 'Raleway', sans-serif;
+            font-size: 0.85rem;
+            transition: all 0.3s;
         }
         
-        .s7-nav-dropdown-item:hover { background: rgba(212, 175, 55, 0.1); color: var(--s7-gold); }
-        
-        .s7-nav-dropdown-icon { font-size: 1.1rem; width: 24px; text-align: center; }
-        .s7-nav-dropdown-text { font-size: 0.85rem; }
-        .s7-nav-dropdown-desc { font-size: 0.7rem; color: var(--s7-text-dim); }
+        .s7-nav-dropdown-item:hover {
+            background: rgba(204, 0, 0, 0.1);
+            color: var(--red);
+        }
         
         .s7-nav-cta {
-            background: linear-gradient(135deg, var(--s7-gold) 0%, var(--s7-gold-dark) 100%);
-            color: #000;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            background: linear-gradient(135deg, var(--red), var(--red-dark));
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 4px;
             text-decoration: none;
-            transition: all 0.3s ease;
-            font-family: 'Raleway', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         
-        .s7-nav-cta:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+        .s7-nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(204, 0, 0, 0.4);
+        }
         
-        .s7-nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 10px; background: none; border: none; }
-        .s7-nav-toggle span { width: 24px; height: 2px; background: var(--s7-gold); }
+        .s7-nav-mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        .s7-nav-mobile-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--red);
+            transition: 0.3s;
+        }
         
         @media (max-width: 900px) {
             .s7-nav-links {
-                position: fixed; top: 60px; left: 0; right: 0; background: var(--s7-navy);
-                flex-direction: column; padding: 20px; gap: 5px;
-                border-bottom: 1px solid rgba(204, 0, 0, 0.3);
-                transform: translateY(-100%); opacity: 0; visibility: hidden; transition: all 0.3s ease;
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(10, 10, 10, 0.98);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding-top: 40px;
+                gap: 0;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s;
             }
-            .s7-nav-links.active { transform: translateY(0); opacity: 1; visibility: visible; }
-            .s7-nav-toggle { display: flex; }
-            .s7-nav-link, .s7-nav-dropdown-btn { width: 100%; padding: 12px 15px; }
-            .s7-nav-dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; background: rgba(0,0,0,0.2); margin-top: 5px; }
-            .s7-nav-cta { width: 100%; text-align: center; margin-top: 10px; }
+            
+            .s7-nav-links.active {
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .s7-nav-link {
+                padding: 15px 30px;
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid var(--dark-border);
+            }
+            
+            .s7-nav-dropdown-content {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                background: rgba(10, 10, 10, 0.5);
+                border: none;
+                border-radius: 0;
+            }
+            
+            .s7-nav-cta {
+                margin-top: 20px;
+            }
+            
+            .s7-nav-mobile-toggle {
+                display: flex;
+            }
         }
         
-        /* APP STYLES */
-        #app-root {
+        /* ===== MAIN CONTENT ===== */
+        .main {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px 80px;
+            padding: 60px 20px;
         }
         
-        /* FOOTER */
-        .s7-footer {
-            background: linear-gradient(180deg, var(--s7-navy) 0%, #050505 100%);
-            border-top: 1px solid rgba(204, 0, 0, 0.3);
-            padding: 60px 20px 30px;
-        }
-        
-        .s7-footer-container { max-width: 1200px; margin: 0 auto; }
-        
-        .s7-footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 40px;
+        /* ===== MISSION HEADER ===== */
+        .mission-header {
+            text-align: center;
             margin-bottom: 50px;
         }
         
-        .s7-footer-section h4 {
+        .classified-stamp {
+            display: inline-block;
             font-family: 'Orbitron', monospace;
-            color: var(--s7-gold);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
+            color: var(--red);
+            border: 2px solid var(--red);
+            padding: 8px 20px;
+            transform: rotate(-3deg);
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+        
+        .mission-date {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+        
+        .countdown {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .countdown-time {
+            font-family: 'Orbitron', monospace;
+            color: var(--red);
+        }
+        
+        /* ===== MISSION CARD ===== */
+        .mission-card {
+            background: var(--dark-card);
+            border: 1px solid var(--red);
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .mission-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--red), var(--gold), var(--red));
+        }
+        
+        .card-label {
+            font-family: 'Orbitron', monospace;
+            font-size: 0.75rem;
+            color: var(--red);
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+        
+        .card-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        
+        .card-content {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        /* Scripture Card */
+        .scripture-card {
+            border-color: var(--gold);
+        }
+        
+        .scripture-card .card-label {
+            color: var(--gold);
+        }
+        
+        .scripture-text {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            font-style: italic;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .scripture-ref {
+            font-family: 'Orbitron', monospace;
+            color: var(--gold);
+            font-size: 0.9rem;
+        }
+        
+        /* Character Target */
+        .character-card {
+            border-color: #00ccff;
+        }
+        
+        .character-card .card-label {
+            color: #00ccff;
+        }
+        
+        .character-trait {
+            font-family: 'Orbitron', monospace;
+            font-size: 2rem;
+            color: #00ccff;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        /* ===== ACCEPT MISSION ===== */
+        .accept-section {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .accept-btn {
+            display: inline-block;
+            padding: 20px 60px;
+            background: linear-gradient(135deg, var(--red), var(--red-dark));
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-family: 'Orbitron', monospace;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .accept-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(204, 0, 0, 0.4);
+        }
+        
+        .accept-btn.accepted {
+            background: linear-gradient(135deg, #00cc44, #009933);
+        }
+        
+        .mission-accepted {
+            display: none;
+            margin-top: 30px;
+            padding: 30px;
+            background: rgba(0, 204, 68, 0.1);
+            border: 1px solid #00cc44;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .mission-accepted.visible {
+            display: block;
+        }
+        
+        .accepted-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.3rem;
+            color: #00cc44;
+            margin-bottom: 10px;
+        }
+        
+        .accepted-text {
+            color: var(--text-secondary);
+        }
+        
+        /* ===== NAVIGATION LINKS ===== */
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--red);
+            color: var(--red);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(204, 0, 0, 0.1);
+        }
+        
+        /* ===== FOOTER ===== */
+        .s7-footer {
+            background: linear-gradient(180deg, #0a0a0a 0%, #050505 100%);
+            border-top: 1px solid rgba(204, 0, 0, 0.3);
+            padding: 60px 20px 30px;
+            margin-top: 60px;
+        }
+        
+        .s7-footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .s7-footer-col h4 {
+            font-family: 'Orbitron', monospace;
+            color: var(--gold);
+            font-size: 0.8rem;
             margin-bottom: 20px;
             letter-spacing: 2px;
         }
         
-        .s7-footer-links { list-style: none; }
-        .s7-footer-links li { margin-bottom: 10px; }
-        
-        .s7-footer-links a {
-            color: var(--s7-text-dim);
+        .s7-footer-col a {
+            display: block;
+            color: var(--text-secondary);
             text-decoration: none;
             font-size: 0.85rem;
-            transition: color 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-family: 'Raleway', sans-serif;
+            padding: 6px 0;
+            transition: color 0.3s;
         }
         
-        .s7-footer-links a:hover { color: var(--s7-gold); }
-        .s7-footer-links .icon { font-size: 0.9rem; width: 18px; }
+        .s7-footer-col a:hover {
+            color: var(--gold);
+        }
         
         .s7-footer-bottom {
-            border-top: 1px solid rgba(204, 0, 0, 0.2);
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
             padding-top: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
+            border-top: 1px solid var(--dark-border);
         }
         
-        .s7-footer-formula { font-family: 'Orbitron', monospace; font-size: 1.4rem; color: var(--s7-gold); }
-        .s7-footer-tagline { color: var(--s7-text-dim); font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; font-family: 'Raleway', sans-serif; }
-        .s7-footer-copy { color: rgba(255,255,255,0.3); font-size: 0.75rem; font-family: 'Raleway', sans-serif; }
-        .s7-footer-copy a { color: rgba(212, 175, 55, 0.5); text-decoration: none; }
+        .s7-footer-formula {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.4rem;
+            color: var(--gold);
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+            margin-bottom: 10px;
+        }
+        
+        .s7-footer-tagline {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+        
+        .s7-footer-copy {
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+        }
         
         @media (max-width: 768px) {
-            .s7-footer-grid { grid-template-columns: 1fr 1fr; }
+            .mission-date {
+                font-size: 1.2rem;
+            }
+            
+            .mission-card {
+                padding: 25px;
+            }
+            
+            .card-title {
+                font-size: 1.2rem;
+            }
+            
+            .character-trait {
+                font-size: 1.5rem;
+            }
+            
+            .s7-footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
 <body>
-
-<!-- NAVIGATION -->
-<nav class="s7-nav">
-    <div class="s7-nav-container">
+    <!-- Navigation -->
+    <nav class="s7-nav">
         <a href="https://sevencubedseven.com" class="s7-nav-logo">
-            <div class="s7-nav-logo-icon"></div>
-            <span class="s7-nav-logo-text">7³×7 LABS</span>
+            <div class="s7-nav-cube"></div>
+            <span class="s7-nav-brand">7³×7 LABS</span>
         </a>
         
-        <button class="s7-nav-toggle" onclick="document.querySelector('.s7-nav-links').classList.toggle('active')">
-            <span></span><span></span><span></span>
-        </button>
-        
-        <div class="s7-nav-links">
+        <div class="s7-nav-links" id="navLinks">
             <a href="https://144000.ai" class="s7-nav-link">144,000</a>
             <a href="https://2401.is" class="s7-nav-link">Mathematics</a>
             <a href="https://divineinsurgent.live" class="s7-nav-link active">Insurgent</a>
             
             <div class="s7-nav-dropdown">
-                <button class="s7-nav-dropdown-btn">Tools</button>
-                <div class="s7-nav-dropdown-menu">
-                    <a href="https://144000.ai/assessment.html" class="s7-nav-dropdown-item">
-                        <span class="s7-nav-dropdown-icon">✨</span>
-                        <div><div class="s7-nav-dropdown-text">144,000 Assessment</div><div class="s7-nav-dropdown-desc">Discover your calling</div></div>
-                    </a>
-                    <a href="https://2401.is/calculator.html" class="s7-nav-dropdown-item">
-                        <span class="s7-nav-dropdown-icon">⚡</span>
-                        <div><div class="s7-nav-dropdown-text">C⁷ Calculator</div><div class="s7-nav-dropdown-desc">Your consciousness level</div></div>
-                    </a>
-                    <a href="https://2401.is/probability.html" class="s7-nav-dropdown-item">
-                        <span class="s7-nav-dropdown-icon">📊</span>
-                        <div><div class="s7-nav-dropdown-text">Probability Cascade</div><div class="s7-nav-dropdown-desc">Watch impossibility unfold</div></div>
-                    </a>
-                    <a href="mission.html" class="s7-nav-dropdown-item">
-                        <span class="s7-nav-dropdown-icon">⚔️</span>
-                        <div><div class="s7-nav-dropdown-text">Daily Mission</div><div class="s7-nav-dropdown-desc">Your tactical briefing</div></div>
-                    </a>
-                    <a href="https://sevencubedseven.com/books.html" class="s7-nav-dropdown-item">
-                        <span class="s7-nav-dropdown-icon">📚</span>
-                        <div><div class="s7-nav-dropdown-text">Book Finder</div><div class="s7-nav-dropdown-desc">Personalized recommendations</div></div>
-                    </a>
+                <span class="s7-nav-link" style="cursor: pointer;">Tools ▾</span>
+                <div class="s7-nav-dropdown-content">
+                    <a href="https://144000.ai/assessment.html" class="s7-nav-dropdown-item">✨ 144,000 Assessment</a>
+                    <a href="https://2401.is/calculator.html" class="s7-nav-dropdown-item">⚡ C⁷ Calculator</a>
+                    <a href="https://2401.is/probability.html" class="s7-nav-dropdown-item">📊 Probability Cascade</a>
+                    <a href="https://divineinsurgent.live/mission.html" class="s7-nav-dropdown-item">⚔️ Daily Mission</a>
+                    <a href="https://sevencubedseven.com/books.html" class="s7-nav-dropdown-item">📚 Book Finder</a>
                 </div>
             </div>
             
-            <a href="https://www.amazon.com/s?k=julio+c.+medina" target="_blank" class="s7-nav-cta">📚 All Books</a>
+            <a href="https://www.amazon.com/s?k=julio+c.+medina" class="s7-nav-cta" target="_blank">📚 All Books</a>
         </div>
-    </div>
-</nav>
-
-<!-- REACT APP -->
-<div id="app-root"></div>
-
-<!-- FOOTER -->
-<footer class="s7-footer">
-    <div class="s7-footer-container">
+        
+        <div class="s7-nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main">
+        <div class="mission-header">
+            <div class="classified-stamp">CLASSIFIED</div>
+            <div class="mission-date" id="missionDate"></div>
+            <div class="countdown">
+                New briefing in: <span class="countdown-time" id="countdown">--:--:--</span>
+            </div>
+        </div>
+        
+        <!-- Primary Mission -->
+        <div class="mission-card">
+            <div class="card-label">PRIMARY MISSION</div>
+            <div class="card-title" id="missionTitle"></div>
+            <div class="card-content" id="missionContent"></div>
+        </div>
+        
+        <!-- Scripture -->
+        <div class="mission-card scripture-card">
+            <div class="card-label">OPERATIONAL SCRIPTURE</div>
+            <div class="scripture-text" id="scriptureText"></div>
+            <div class="scripture-ref" id="scriptureRef"></div>
+        </div>
+        
+        <!-- Character Target -->
+        <div class="mission-card character-card">
+            <div class="card-label">CHARACTER TARGET</div>
+            <div class="character-trait" id="characterTrait"></div>
+            <div class="card-content" id="characterContent"></div>
+        </div>
+        
+        <!-- Accept Mission -->
+        <div class="accept-section">
+            <button class="accept-btn" id="acceptBtn" onclick="acceptMission()">Accept Mission</button>
+            
+            <div class="mission-accepted" id="missionAccepted">
+                <div class="accepted-title">✓ MISSION ACCEPTED</div>
+                <div class="accepted-text">Your orders are confirmed. Execute with excellence. Report at 2100 hours.</div>
+            </div>
+        </div>
+        
+        <div class="nav-links">
+            <a href="https://144000.ai/assessment.html" class="btn btn-secondary">Take Assessment</a>
+            <a href="https://2401.is/calculator.html" class="btn btn-secondary">Calculate C-Level</a>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="s7-footer">
         <div class="s7-footer-grid">
-            <div class="s7-footer-section">
+            <div class="s7-footer-col">
                 <h4>PORTALS</h4>
-                <ul class="s7-footer-links">
-                    <li><a href="https://sevencubedseven.com"><span class="icon">🏠</span> Main Hub</a></li>
-                    <li><a href="https://144000.ai"><span class="icon">✨</span> 144,000 Portal</a></li>
-                    <li><a href="https://2401.is"><span class="icon">🔢</span> Mathematics</a></li>
-                    <li><a href="https://divineinsurgent.live"><span class="icon">⚔️</span> Divine Insurgent</a></li>
-                    <li><a href="https://realitynegotiable.is"><span class="icon">🧠</span> Reality Physics</a></li>
-                    <li><a href="https://c343.io"><span class="icon">📜</span> Licensing</a></li>
-                </ul>
+                <a href="https://sevencubedseven.com">🏠 Main Hub</a>
+                <a href="https://144000.ai">✨ 144,000 Portal</a>
+                <a href="https://2401.is">📐 Mathematics</a>
+                <a href="https://divineinsurgent.live">⚔️ Divine Insurgent</a>
+                <a href="https://realitynegotiable.is">🌀 Reality Negotiable</a>
+                <a href="https://c343.io">🏢 Enterprise</a>
             </div>
             
-            <div class="s7-footer-section">
+            <div class="s7-footer-col">
                 <h4>TOOLS</h4>
-                <ul class="s7-footer-links">
-                    <li><a href="https://144000.ai/assessment.html"><span class="icon">✨</span> Assessment</a></li>
-                    <li><a href="https://2401.is/calculator.html"><span class="icon">⚡</span> Calculator</a></li>
-                    <li><a href="https://2401.is/probability.html"><span class="icon">📊</span> Probability</a></li>
-                    <li><a href="mission.html"><span class="icon">⚔️</span> Daily Mission</a></li>
-                    <li><a href="https://sevencubedseven.com/books.html"><span class="icon">📚</span> Book Finder</a></li>
-                </ul>
+                <a href="https://144000.ai/assessment.html">✨ 144,000 Assessment</a>
+                <a href="https://2401.is/calculator.html">⚡ C⁷ Calculator</a>
+                <a href="https://2401.is/probability.html">📊 Probability Cascade</a>
+                <a href="https://divineinsurgent.live/mission.html">⚔️ Daily Mission</a>
+                <a href="https://sevencubedseven.com/books.html">📚 Book Finder</a>
             </div>
             
-            <div class="s7-footer-section">
+            <div class="s7-footer-col">
                 <h4>RESOURCES</h4>
-                <ul class="s7-footer-links">
-                    <li><a href="https://www.amazon.com/s?k=julio+c.+medina" target="_blank"><span class="icon">📚</span> All 33+ Books</a></li>
-                    <li><a href="https://twitter.com/7Cubed7" target="_blank"><span class="icon">𝕏</span> @7Cubed7</a></li>
-                    <li><a href="mailto:7cubed7@proton.me"><span class="icon">✉️</span> Contact</a></li>
-                </ul>
+                <a href="https://www.amazon.com/s?k=julio+c.+medina" target="_blank">📖 All Books on Amazon</a>
+                <a href="https://twitter.com/7Cubed7" target="_blank">𝕏 @7Cubed7</a>
+                <a href="mailto:7cubed7@proton.me">✉️ Contact</a>
             </div>
             
-            <div class="s7-footer-section">
+            <div class="s7-footer-col">
                 <h4>CONNECT</h4>
-                <ul class="s7-footer-links">
-                    <li><a href="mailto:7cubed7@proton.me">7cubed7@proton.me</a></li>
-                    <li><a href="mailto:ConsciousCodeLabs@proton.me">Business</a></li>
-                    <li><a href="mailto:hello@c343.io">Licensing</a></li>
-                </ul>
+                <a href="mailto:7cubed7@proton.me">7cubed7@proton.me</a>
+                <a href="mailto:ConsciousCodeLabs@proton.me">ConsciousCodeLabs@proton.me</a>
+                <a href="mailto:hello@c343.io">hello@c343.io</a>
             </div>
         </div>
         
         <div class="s7-footer-bottom">
             <div class="s7-footer-formula">7³ × 7 = 2,401</div>
-            <div class="s7-footer-tagline">Consciousness Architecture</div>
-            <div class="s7-footer-copy">© 2025 <a href="https://sevencubedseven.com">Seven Cubed Seven Labs LLC</a>. All rights reserved.</div>
+            <div class="s7-footer-tagline">CONSCIOUSNESS ARCHITECTURE</div>
+            <div class="s7-footer-copy">© 2025 Seven Cubed Seven Labs LLC. All rights reserved.</div>
         </div>
-    </div>
-</footer>
-
-<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-<script type="text/babel">
-const { useState, useEffect } = React;
-
-const scriptures = [
-  { ref: "Ephesians 6:12", text: "For we do not wrestle against flesh and blood, but against principalities, against powers..." },
-  { ref: "2 Corinthians 10:4", text: "The weapons of our warfare are not carnal, but mighty through God..." },
-  { ref: "Romans 12:2", text: "Be not conformed to this world: but be transformed by the renewing of your mind..." },
-  { ref: "Revelation 14:12", text: "Here is the patience of the saints: here are they that keep the commandments of God, and the faith of Jesus." },
-  { ref: "Daniel 11:32", text: "The people that do know their God shall be strong, and do exploits." },
-  { ref: "Isaiah 41:10", text: "Fear not, for I am with you; be not dismayed, for I am your God..." },
-  { ref: "Philippians 4:13", text: "I can do all things through Christ which strengtheneth me." }
-];
-
-const objectives = [
-  { type: "RECONNAISSANCE", desc: "Observe and document 3 instances of divine providence today" },
-  { type: "INFILTRATION", desc: "Engage one person in meaningful spiritual conversation" },
-  { type: "FORTIFICATION", desc: "Spend 30 minutes strengthening your prayer life" },
-  { type: "DISRUPTION", desc: "Challenge one lie you've believed about yourself or God" },
-  { type: "EXTRACTION", desc: "Remove one time-wasting activity and replace with purpose" },
-  { type: "COORDINATION", desc: "Encourage one fellow believer in their mission" },
-  { type: "INTELLIGENCE", desc: "Study one chapter of Daniel or Revelation deeply" }
-];
-
-const characters = [
-  { trait: "PATIENCE", focus: "Practice waiting without anxiety in 3 situations today" },
-  { trait: "HUMILITY", focus: "Acknowledge one area where you need God's correction" },
-  { trait: "COURAGE", focus: "Do one thing you've been avoiding due to fear" },
-  { trait: "FAITH", focus: "Trust God with one situation beyond your control" },
-  { trait: "LOVE", focus: "Show unexpected kindness to someone who doesn't deserve it" },
-  { trait: "SELF-CONTROL", focus: "Resist one temptation deliberately and consciously" },
-  { trait: "DISCERNMENT", focus: "Identify one deception in media or culture today" }
-];
-
-function getDailyMission() {
-  const today = new Date();
-  const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
-  
-  const scriptureIndex = dayOfYear % scriptures.length;
-  const objectiveIndex = (dayOfYear + 3) % objectives.length;
-  const characterIndex = (dayOfYear + 5) % characters.length;
-  
-  return {
-    date: today.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }),
-    scripture: scriptures[scriptureIndex],
-    objective: objectives[objectiveIndex],
-    character: characters[characterIndex],
-    missionCode: `DI-${today.getFullYear()}-${String(dayOfYear).padStart(3, '0')}`
-  };
-}
-
-function DailyMission() {
-  const [mission, setMission] = useState(null);
-  const [timeToMidnight, setTimeToMidnight] = useState('');
-
-  useEffect(() => {
-    setMission(getDailyMission());
+    </footer>
     
-    const updateCountdown = () => {
-      const now = new Date();
-      const midnight = new Date();
-      midnight.setHours(24, 0, 0, 0);
-      const diff = midnight - now;
-      
-      const hours = Math.floor(diff / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-      
-      setTimeToMidnight(`${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`);
-    };
-    
-    updateCountdown();
-    const interval = setInterval(updateCountdown, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
-  if (!mission) return null;
-
-  const styles = {
-    container: { },
-    header: { textAlign: 'center', marginBottom: '30px' },
-    classified: { display: 'inline-block', background: '#cc0000', color: '#fff', padding: '6px 25px', fontFamily: 'Orbitron, monospace', fontSize: '0.8rem', letterSpacing: '4px', marginBottom: '15px' },
-    title: { fontFamily: 'Orbitron, monospace', fontSize: '1.8rem', color: '#cc0000', letterSpacing: '3px', marginBottom: '10px' },
-    date: { color: '#888', fontSize: '0.9rem' },
-    missionCode: { color: '#cc0000', fontFamily: 'Orbitron, monospace', fontSize: '0.8rem', marginTop: '5px' },
-    countdown: { textAlign: 'center', marginBottom: '30px', padding: '15px', background: 'rgba(204,0,0,0.1)', border: '1px solid rgba(204,0,0,0.3)', borderRadius: '8px' },
-    countdownLabel: { color: '#888', fontSize: '0.75rem', letterSpacing: '2px', marginBottom: '5px' },
-    countdownTime: { fontFamily: 'Orbitron, monospace', fontSize: '1.5rem', color: '#cc0000' },
-    section: { background: 'rgba(204,0,0,0.05)', border: '1px solid rgba(204,0,0,0.2)', borderRadius: '10px', padding: '25px', marginBottom: '20px' },
-    sectionLabel: { fontFamily: 'Orbitron, monospace', color: '#cc0000', fontSize: '0.75rem', letterSpacing: '3px', marginBottom: '15px' },
-    scriptureText: { fontStyle: 'italic', color: '#d4af37', fontSize: '1.1rem', marginBottom: '10px', lineHeight: '1.7' },
-    scriptureRef: { color: '#888', fontSize: '0.85rem' },
-    objectiveType: { fontFamily: 'Orbitron, monospace', color: '#ff3333', fontSize: '1.2rem', marginBottom: '10px' },
-    objectiveDesc: { color: '#e8e8e8', fontSize: '1rem' },
-    characterTrait: { fontFamily: 'Orbitron, monospace', color: '#d4af37', fontSize: '1.2rem', marginBottom: '10px' },
-    characterFocus: { color: '#e8e8e8', fontSize: '1rem' },
-    ctaBox: { background: 'rgba(212,175,55,0.1)', border: '1px solid #d4af37', borderRadius: '10px', padding: '25px', marginTop: '30px', textAlign: 'center' },
-    ctaTitle: { fontFamily: 'Orbitron, monospace', color: '#d4af37', marginBottom: '10px', fontSize: '1rem' },
-    ctaBtn: { display: 'inline-block', background: 'linear-gradient(135deg, #d4af37 0%, #b8960c 100%)', color: '#000', padding: '12px 30px', borderRadius: '25px', textDecoration: 'none', fontWeight: '600', marginTop: '10px' }
-  };
-
-  return (
-    <div style={styles.container}>
-      <div style={styles.header}>
-        <div style={styles.classified}>CLASSIFIED</div>
-        <h1 style={styles.title}>DAILY TACTICAL BRIEFING</h1>
-        <p style={styles.date}>{mission.date}</p>
-        <p style={styles.missionCode}>Mission: {mission.missionCode}</p>
-      </div>
-
-      <div style={styles.countdown}>
-        <div style={styles.countdownLabel}>NEW MISSION IN</div>
-        <div style={styles.countdownTime}>{timeToMidnight}</div>
-      </div>
-
-      <div style={styles.section}>
-        <div style={styles.sectionLabel}>📖 SCRIPTURE FOCUS</div>
-        <p style={styles.scriptureText}>"{mission.scripture.text}"</p>
-        <p style={styles.scriptureRef}>— {mission.scripture.ref}</p>
-      </div>
-
-      <div style={styles.section}>
-        <div style={styles.sectionLabel}>🎯 PRIMARY OBJECTIVE</div>
-        <h3 style={styles.objectiveType}>{mission.objective.type}</h3>
-        <p style={styles.objectiveDesc}>{mission.objective.desc}</p>
-      </div>
-
-      <div style={styles.section}>
-        <div style={styles.sectionLabel}>💎 CHARACTER TARGET</div>
-        <h3 style={styles.characterTrait}>{mission.character.trait}</h3>
-        <p style={styles.characterFocus}>{mission.character.focus}</p>
-      </div>
-
-      <div style={styles.ctaBox}>
-        <h3 style={styles.ctaTitle}>Discover Your Consciousness Level</h3>
-        <p style={{color: '#888', fontSize: '0.9rem'}}>Complete the C⁷ Calculator assessment</p>
-        <a href="https://2401.is/calculator.html" style={styles.ctaBtn}>⚡ Calculate Now</a>
-      </div>
-    </div>
-  );
-}
-
-ReactDOM.createRoot(document.getElementById('app-root')).render(<DailyMission />);
-</script>
-
+    <script>
+        const missions = [
+            {
+                title: 'Practice radical truth-telling in every conversation today',
+                content: 'The enemy thrives in ambiguity and half-truths. Your mission: speak with complete honesty in every interaction. Let your yes be yes and your no be no. Watch how truth disrupts enemy strongholds in your sphere of influence.',
+                scripture: 'Therefore, putting away lying, "Let each one of you speak truth with his neighbor," for we are members of one another.',
+                ref: 'Ephesians 4:25',
+                trait: 'INTEGRITY',
+                traitContent: 'Today\'s character target is integrity — the alignment between your words, beliefs, and actions. The 144,000 will be known for their absolute trustworthiness.'
+            },
+            {
+                title: 'Intercede for someone who has wronged you',
+                content: 'This is advanced spiritual warfare. Pray blessing and breakthrough over someone who has caused you pain. This act of grace breaks chains the enemy thought were permanent.',
+                scripture: 'But I say to you, love your enemies, bless those who curse you, do good to those who hate you, and pray for those who spitefully use you and persecute you.',
+                ref: 'Matthew 5:44',
+                trait: 'FORGIVENESS',
+                traitContent: 'Today\'s character target is forgiveness — the supernatural ability to release others from debts they legitimately owe you. This is Christ\'s nature formed within.'
+            },
+            {
+                title: 'Fast from digital distraction until sundown',
+                content: 'Clear the channel. No social media, no news, no entertainment until the sun sets. Use every moment of mental space for communion with the Commander. Listen more than you speak.',
+                scripture: 'Be still, and know that I am God; I will be exalted among the nations, I will be exalted in the earth!',
+                ref: 'Psalm 46:10',
+                trait: 'DISCIPLINE',
+                traitContent: 'Today\'s character target is discipline — the ability to say no to lesser things so you can say yes to the greater. The flesh must learn to obey the spirit.'
+            },
+            {
+                title: 'Share the gospel with one person today',
+                content: 'Not a tract. Not a link. A genuine conversation about what Christ has done in your life. The Loud Cry begins with individual voices. Be one of them today.',
+                scripture: 'For I am not ashamed of the gospel of Christ, for it is the power of God to salvation for everyone who believes.',
+                ref: 'Romans 1:16',
+                trait: 'BOLDNESS',
+                traitContent: 'Today\'s character target is boldness — holy courage that speaks truth regardless of consequences. This is Peter after Pentecost, not before.'
+            },
+            {
+                title: 'Identify and confess one hidden sin',
+                content: 'Search the corners of your heart. What have you been protecting from God\'s light? Bring it fully into the open. Confession to God, and if needed, to one trusted brother or sister.',
+                scripture: 'If we confess our sins, He is faithful and just to forgive us our sins and to cleanse us from all unrighteousness.',
+                ref: '1 John 1:9',
+                trait: 'HUMILITY',
+                traitContent: 'Today\'s character target is humility — accurate self-assessment before God. Not thinking less of yourself, but thinking of yourself less.'
+            },
+            {
+                title: 'Perform an act of radical generosity',
+                content: 'Give something away that costs you. Time, money, energy, possession — whatever the Spirit prompts. Give until you feel it. This is investment in the eternal economy.',
+                scripture: 'Give, and it will be given to you: good measure, pressed down, shaken together, and running over will be put into your bosom.',
+                ref: 'Luke 6:38',
+                trait: 'GENEROSITY',
+                traitContent: 'Today\'s character target is generosity — the open-handed approach to everything you possess. Nothing is truly yours; you\'re a steward of the King\'s resources.'
+            },
+            {
+                title: 'Spend one hour in focused intercession for the 144,000',
+                content: 'Pray for the scattered remnant worldwide. Pray for their awakening, their strengthening, their connection to each other. You are praying for your brothers and sisters.',
+                scripture: 'Praying always with all prayer and supplication in the Spirit, being watchful to this end with all perseverance and supplication for all the saints.',
+                ref: 'Ephesians 6:18',
+                trait: 'INTERCESSION',
+                traitContent: 'Today\'s character target is intercession — standing in the gap for others. This is priestly ministry, the work Christ does at the Father\'s right hand.'
+            }
+        ];
+        
+        function getDayOfYear() {
+            const now = new Date();
+            const start = new Date(now.getFullYear(), 0, 0);
+            const diff = now - start;
+            const oneDay = 1000 * 60 * 60 * 24;
+            return Math.floor(diff / oneDay);
+        }
+        
+        function loadMission() {
+            const dayOfYear = getDayOfYear();
+            const missionIndex = dayOfYear % missions.length;
+            const mission = missions[missionIndex];
+            
+            // Set date
+            const today = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('missionDate').textContent = today.toLocaleDateString('en-US', options).toUpperCase();
+            
+            // Set mission content
+            document.getElementById('missionTitle').textContent = mission.title;
+            document.getElementById('missionContent').textContent = mission.content;
+            document.getElementById('scriptureText').textContent = '"' + mission.scripture + '"';
+            document.getElementById('scriptureRef').textContent = '— ' + mission.ref;
+            document.getElementById('characterTrait').textContent = mission.trait;
+            document.getElementById('characterContent').textContent = mission.traitContent;
+            
+            // Check if already accepted today
+            const acceptedDate = localStorage.getItem('missionAcceptedDate');
+            if (acceptedDate === today.toDateString()) {
+                showAccepted();
+            }
+        }
+        
+        function updateCountdown() {
+            const now = new Date();
+            const midnight = new Date(now);
+            midnight.setHours(24, 0, 0, 0);
+            
+            const diff = midnight - now;
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown').textContent = 
+                String(hours).padStart(2, '0') + ':' + 
+                String(minutes).padStart(2, '0') + ':' + 
+                String(seconds).padStart(2, '0');
+        }
+        
+        function acceptMission() {
+            const today = new Date().toDateString();
+            localStorage.setItem('missionAcceptedDate', today);
+            showAccepted();
+        }
+        
+        function showAccepted() {
+            const btn = document.getElementById('acceptBtn');
+            btn.textContent = '✓ ACCEPTED';
+            btn.classList.add('accepted');
+            btn.disabled = true;
+            document.getElementById('missionAccepted').classList.add('visible');
+        }
+        
+        // Initialize
+        loadMission();
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
 </body>
 </html>
